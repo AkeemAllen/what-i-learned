@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import NavBar from "../components/NavBar";
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -13,6 +14,8 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
+      <div style={{ padding: 0, margin: 0, border: 0, backgroundColor:'#F4FAFF'}}>
+      <NavBar />
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
@@ -76,6 +79,7 @@ class BlogPostTemplate extends React.Component {
           </ul>
         </nav>
       </Layout>
+      </div>
     )
   }
 }
