@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    font-family: 'Merriweather','Georgia',serif;
+    width: 100%;
+    background-color: #333745;
+    position: fixed;
+    top: 0;
+    justify-content: center;
+    // border-bottom: 2px solid #333;
+    overflow: hidden;
+    // box-shadow: 0px 0px 5px 0.25px #333;
+
+    .innerNavBar{
+        display: flex;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-right: 2%;
+        margin-left: 2%;
+        width: 60%;
+        justify-content: space-between;
+
+        h3 {
+            font-family: 'Roboto Condensed', sans-serif;
+            color: #FE5F55;
+            margin:0;
+        }
+
+        .links {
+            ul {
+                list-style-type: none;
+                li {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
