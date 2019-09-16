@@ -12,7 +12,7 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const posts = data.allContentfulBlogPost.edges
 
     return (
       <div style={{ padding: 0, margin: 0, border: 0, backgroundColor:'#F4FAFF'}}>
@@ -21,25 +21,25 @@ class BlogIndex extends React.Component {
           <SEO title="All posts" />
           <Bio />
           {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
+            const title = node.title || node.slug
             return (
-              <article key={node.fields.slug}>
+              <article key={node.slug}>
                 <header>
                   <h3
                     style={{
                       marginBottom: rhythm(1 / 4),
                     }}
                   >
-                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                    <Link style={{ boxShadow: `none` }} to={node.slug}>
                       {title}
                     </Link>
                   </h3>
-                  <small>{node.frontmatter.date}</small>
+                  <small>{node.date}</small>
                 </header>
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
+                      __html: node.description.description
                     }}
                   />
                 </section>
@@ -61,18 +61,18 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allContentfulBlogPost(
+      sort: {
+        fields: date,
+        order: DESC
+      }
+    ) {
       edges {
         node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
+          title
+          description{description}
+          slug
+          date(formatString: "MMMM DD, YYYY")
         }
       }
     }
