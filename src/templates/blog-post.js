@@ -6,6 +6,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import NavBar from "../components/NavBar";
+import {documentToReactComponents} from "@contentful/rich-text-react-renderer"
+// import * as MarkDown from "react-markdown"
+import MarkDown from "markdown-to-jsx"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -13,13 +16,28 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
+    const richTextOptions = {
+      renderNode: {
+        "embedded-asset-block": (node) => {
+          const alt=node.data.target.fields.title['en-US'];
+          const url=node.data.target.fields.file['en-US'].url;
+          return <img alt={alt} src={url}/>
+        }
+      },
+      renderText: (text) => {
+        return <MarkDown children={text}/>
+      }
+    }
+    
+    const markdown = documentToReactComponents(post.body.json,richTextOptions);
+    
     return (
       <div style={{ padding: 0, margin: 0, border: 0, backgroundColor:'#F4FAFF'}}>
       <NavBar />
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.title}
-          description={post.description}
+          description={post.description.description}
         />
         <article>
           <header>
@@ -41,7 +59,9 @@ class BlogPostTemplate extends React.Component {
               {post.date}
             </p>
           </header>
-          <section />
+          <section>
+            {markdown}
+          </section>
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -99,7 +119,14 @@ export const pageQuery = graphql`
       title
       date(formatString: "MMMM DD, YYYY")
       description{description}
-      body{body}
+      body {
+        json
+        content {
+          content {
+            value
+          }
+        }
+      }
     }
   }
 `
