@@ -59,7 +59,7 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "env-cmd -f .env.production build": "env-cmd -f .env.production gatsby build",
+    "build": "env-cmd -f .env.development gatsby build",
     "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
