@@ -8,7 +8,7 @@ I have come to the realization that one of the best ways for a person to solidif
 
 It is a bit ironic and poetic that one of the secrets to growth for any individual is for that individual to share his own strength
 
-Hence, this blog site. 
+Hence, this blog site.
 
 The desire to improve my own skills and knowledge has led me to the conclusion that I should let others benefit from the little that I know so that I myself may consolidate the strength it has to offer.
 

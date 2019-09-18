@@ -6,7 +6,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-import NavBar from "../components/NavBar/index"
+import NavBar from "../components/NavBar"
+// import CrudNav from "../components/CRUDNavBar"
 
 class BlogIndex extends React.Component {
   render() {
@@ -15,8 +16,11 @@ class BlogIndex extends React.Component {
     const posts = data.allContentfulBlogPost.edges
 
     return (
-      <div style={{ padding: 0, margin: 0, border: 0, backgroundColor:'#F4FAFF'}}>
+      <div
+        style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#F4FAFF" }}
+      >
         <NavBar />
+        {/* <CrudNav /> */}
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="All posts" />
           <Bio />
@@ -39,7 +43,7 @@ class BlogIndex extends React.Component {
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: node.description.description
+                      __html: node.description.description,
                     }}
                   />
                 </section>
@@ -61,16 +65,13 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulBlogPost(
-      sort: {
-        fields: date,
-        order: DESC
-      }
-    ) {
+    allContentfulBlogPost(sort: { fields: date, order: DESC }) {
       edges {
         node {
           title
-          description{description}
+          description {
+            description
+          }
           slug
           date(formatString: "MMMM DD, YYYY")
         }

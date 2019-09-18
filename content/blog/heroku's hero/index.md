@@ -8,7 +8,7 @@ Having worked with a team that avidly practiced C# and dotnet development during
 
 Therefore, its should be no surprise that upon starting new projects requiring ways to communicate with the backend,i.e. WebAPIs, I would immediately consider whether or not a .NET Core REST api would do the job. I am still very much open to using other stacks and technologies...but u know... old habits die hard.
 
-Eventually, I had to cross the bridge of _"Where exactly should I host this thing"_. I came to consider a few options and consulted colleagues on their own thoughts to which one of them mentioned [Heroku](https://www.heroku.com). I gave it a try. 
+Eventually, I had to cross the bridge of _"Where exactly should I host this thing"_. I came to consider a few options and consulted colleagues on their own thoughts to which one of them mentioned [Heroku](https://www.heroku.com). I gave it a try.
 
 Any developer who has been around the block for a while shouldn't have too many issues understanding heroku's setup. I consider it to be quite fluid.
 
