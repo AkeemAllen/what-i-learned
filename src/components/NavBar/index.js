@@ -9,12 +9,12 @@ const NavBar = () => {
           <div>
             <h3>WHAT I LEARNED</h3>
           </div>
-          <div className="links">
-            <ul>
-              <li>
-                {/* <Link to="/blogCreater">Create New Blog</Link> */}
-              </li>
-            </ul>
+          <div className="btn-container">
+            <Link to="/" className="link">
+              <button className="btn">
+                <text>Home</text>
+              </button>
+            </Link>
           </div>
         </div>
     </nav>

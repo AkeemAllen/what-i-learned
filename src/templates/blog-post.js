@@ -97,6 +97,13 @@ class BlogPostTemplate extends React.Component {
               )}
             </li>
           </ul>
+          <ul style={{listStyle:"none"}}>
+            <li>
+              <Link to="/">
+                ← Home
+              </Link>
+            </li>
+          </ul>
         </nav>
       </Layout>
       </div>
