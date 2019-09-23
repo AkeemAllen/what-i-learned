@@ -31,28 +31,11 @@ class Layout extends React.Component {
         </h1>
       )
     } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
+      header = ""
     }
     return (
       <div
+        // onScroll={alert("Scrolling")}
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,

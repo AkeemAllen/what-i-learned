@@ -9,21 +9,34 @@ import { rhythm } from "../utils/typography"
 import NavBar from "../components/NavBar/index"
 
 class BlogIndex extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      categoryName: `book`
+    }
+  }
+
   render() {
     const { data } = this.props
+    const {categoryName} = this.state
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allContentfulBlogPost.edges
 
+    console.log(this.state.categoryName)
     return (
-      <div style={{ padding: 0, margin: 0, border: 0, backgroundColor:'#F4FAFF'}}>
+      <div style={{ padding: 0, margin: 0, border: 0, backgroundColor:'#FFF'}}>
         <NavBar />
-        <Layout location={this.props.location} title={siteTitle}>
+        <Layout onScroll={alert("Scrolling")} location={this.props.location} title={siteTitle}>
           <SEO title="All posts" />
           <Bio />
-          {posts.map(({ node }) => {
+          {posts
+            // .filter(({node}) => 
+            //   node.category.includes(this.state.categoryName)
+            // )
+            .map(({ node }) => {
             const title = node.title || node.slug
             return (
-              <article key={node.slug}>
+              <article onScroll={alert("Scrolling")} key={node.slug}>
                 <header>
                   <h3
                     style={{
@@ -73,6 +86,7 @@ export const pageQuery = graphql`
           description{description}
           slug
           date(formatString: "MMMM DD, YYYY")
+          category
         }
       }
     }
