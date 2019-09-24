@@ -10,7 +10,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 // import * as MarkDown from "react-markdown"
 import MarkDown from "markdown-to-jsx"
 import CommentSection from "../components/CommentsSection"
-import IsScrolling from "react-is-scrolling"
+// import IsScrolling from "react-is-scrolling"
 
 class BlogPostTemplate extends React.Component {
   constructor(props) {
@@ -122,7 +122,7 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default IsScrolling(BlogPostTemplate)
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
