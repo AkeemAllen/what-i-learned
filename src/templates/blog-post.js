@@ -9,6 +9,7 @@ import NavBar from "../components/NavBar"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 // import * as MarkDown from "react-markdown"
 import MarkDown from "markdown-to-jsx"
+import CommentSection from "../components/CommentsSection"
 import IsScrolling from "react-is-scrolling"
 
 class BlogPostTemplate extends React.Component {
@@ -81,6 +82,7 @@ class BlogPostTemplate extends React.Component {
             <footer>
               <Bio />
             </footer>
+            {/* <CommentSection /> */}
           </article>
 
           <nav>
