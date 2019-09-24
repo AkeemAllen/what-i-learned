@@ -32,16 +32,16 @@ class BlogPostTemplate extends React.Component {
   }
 
   handleProgressBar = () => {
-    if (true) {
-      console.log(this.props.IsScrolling)
-    }
+    // if (true) {
+    //   console.log(this.props.IsScrolling)
+    // }
   }
 
   render() {
     const post = this.props.data.contentfulBlogPost
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    const { IsScrollingDown, IsScrollingUp, IsScrolling } = this.props
+    // const { IsScrollingDown, IsScrollingUp, IsScrolling } = this.props
 
     return (
       <div
