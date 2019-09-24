@@ -9,56 +9,58 @@ import { rhythm } from "../utils/typography"
 import NavBar from "../components/NavBar/index"
 
 class BlogIndex extends React.Component {
-  constructor(props){
-    super(props);
+  constructor(props) {
+    super(props)
     this.state = {
-      categoryName: `book`
+      categoryName: `book`,
     }
   }
 
   render() {
     const { data } = this.props
-    const {categoryName} = this.state
+    const { categoryName } = this.state
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allContentfulBlogPost.edges
 
     console.log(this.state.categoryName)
     return (
-      <div style={{ padding: 0, margin: 0, border: 0, backgroundColor:'#FFF'}}>
+      <div
+        style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#FFF" }}
+      >
         <NavBar />
-        <Layout onScroll={alert("Scrolling")} location={this.props.location} title={siteTitle}>
+        <Layout location={this.props.location} title={siteTitle}>
           <SEO title="All posts" />
           <Bio />
           {posts
-            // .filter(({node}) => 
+            // .filter(({node}) =>
             //   node.category.includes(this.state.categoryName)
             // )
             .map(({ node }) => {
-            const title = node.title || node.slug
-            return (
-              <article onScroll={alert("Scrolling")} key={node.slug}>
-                <header>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                  >
-                    <Link style={{ boxShadow: `none` }} to={node.slug}>
-                      {title}
-                    </Link>
-                  </h3>
-                  <small>{node.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.description.description
-                    }}
-                  />
-                </section>
-              </article>
-            )
-          })}
+              const title = node.title || node.slug
+              return (
+                <article onScroll={alert("Scrolling")} key={node.slug}>
+                  <header>
+                    <h3
+                      style={{
+                        marginBottom: rhythm(1 / 4),
+                      }}
+                    >
+                      <Link style={{ boxShadow: `none` }} to={node.slug}>
+                        {title}
+                      </Link>
+                    </h3>
+                    <small>{node.date}</small>
+                  </header>
+                  <section>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: node.description.description,
+                      }}
+                    />
+                  </section>
+                </article>
+              )
+            })}
         </Layout>
       </div>
     )
@@ -74,16 +76,13 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulBlogPost(
-      sort: {
-        fields: date,
-        order: DESC
-      }
-    ) {
+    allContentfulBlogPost(sort: { fields: date, order: DESC }) {
       edges {
         node {
           title
-          description{description}
+          description {
+            description
+          }
           slug
           date(formatString: "MMMM DD, YYYY")
           category

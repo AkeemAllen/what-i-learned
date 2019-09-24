@@ -36,6 +36,7 @@
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-is-scrolling": "^1.0.1",
     "react-markdown": "^4.2.2",
     "react-typography": "^0.16.19",
     "sass": "^1.22.12",

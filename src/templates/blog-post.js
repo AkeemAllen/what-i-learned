@@ -9,6 +9,7 @@ import NavBar from "../components/NavBar"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 // import * as MarkDown from "react-markdown"
 import MarkDown from "markdown-to-jsx"
+import IsScrolling from "react-is-scrolling"
 
 class BlogPostTemplate extends React.Component {
   constructor(props) {
@@ -30,18 +31,20 @@ class BlogPostTemplate extends React.Component {
   }
 
   handleProgressBar = () => {
-    let el = <Layout location={this.props.location} title="Test" />
-    console.log(el.scrollTop)
+    if (true) {
+      console.log(this.props.IsScrolling)
+    }
   }
 
   render() {
     const post = this.props.data.contentfulBlogPost
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const { IsScrollingDown, IsScrollingUp, IsScrolling } = this.props
 
     return (
       <div
-        onWheel={() => this.handleProgressBar()}
+        // onWheel={() => this.handleProgressBar()}
         style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#FFF" }}
       >
         <NavBar progress={this.state.progress} />
@@ -70,12 +73,6 @@ class BlogPostTemplate extends React.Component {
             <section>
               <MarkDown children={post.body.body} />
             </section>
-            <button onClick={() => this.IncrementProgress()}>
-              Increment Progress
-            </button>
-            <button onClick={() => this.DecrementProgress()}>
-              Decrement Progress
-            </button>
             <hr
               style={{
                 marginBottom: rhythm(1),
@@ -123,7 +120,7 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default IsScrolling(BlogPostTemplate)
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
