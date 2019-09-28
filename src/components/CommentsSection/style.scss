@@ -1,3 +1,18 @@
 .base-container {
-  background-color: lightgray;
+  padding-top: 10px;
+  .add-comment {
+    textarea {
+      width: 100%;
+      border: none;
+      border-bottom: solid 1px lightgray;
+    }
+    padding-bottom: 20px;
+  }
+  .comment-container {
+    .comment {
+      border: solid 0.5px #f2f4f7;
+      border-radius: 5px;
+      padding: 30px;
+    }
+  }
 }

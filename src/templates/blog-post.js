@@ -82,7 +82,7 @@ class BlogPostTemplate extends React.Component {
             <footer>
               <Bio />
             </footer>
-            {/* <CommentSection /> */}
+            <CommentSection />
           </article>
 
           <nav>

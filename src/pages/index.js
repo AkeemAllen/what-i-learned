@@ -38,7 +38,7 @@ class BlogIndex extends React.Component {
             .map(({ node }) => {
               const title = node.title || node.slug
               return (
-                <article onScroll={alert("Scrolling")} key={node.slug}>
+                <article key={node.slug}>
                   <header>
                     <h3
                       style={{
