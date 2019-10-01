@@ -2,6 +2,7 @@ import React from "react"
 import "./style.scss"
 import Bio from "./commentAuthor"
 import Comment from "./comment"
+import axios from "axios"
 
 class CommentSection extends React.Component {
   constructor(props) {
@@ -17,6 +18,12 @@ class CommentSection extends React.Component {
       ],
     }
   }
+
+  // componentDidMount(){
+  //   axios.ge
+  // }
+
+  // getAllComments
 
   handleChange = () => {}
 
