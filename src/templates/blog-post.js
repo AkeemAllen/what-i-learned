@@ -6,46 +6,17 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import NavBar from "../components/NavBar"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-// import * as MarkDown from "react-markdown"
 import MarkDown from "markdown-to-jsx"
 import CommentSection from "../components/CommentsSection"
-// import IsScrolling from "react-is-scrolling"
 
 class BlogPostTemplate extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      progress: 0,
-    }
-  }
-
-  IncrementProgress = () => {
-    this.setState({
-      progress: this.state.progress + 10,
-    })
-  }
-  DecrementProgress = () => {
-    this.setState({
-      progress: this.state.progress - 10,
-    })
-  }
-
-  handleProgressBar = () => {
-    // if (true) {
-    //   console.log(this.props.IsScrolling)
-    // }
-  }
-
   render() {
     const post = this.props.data.contentfulBlogPost
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    // const { IsScrollingDown, IsScrollingUp, IsScrolling } = this.props
 
     return (
       <div
-        // onWheel={() => this.handleProgressBar()}
         style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#FFF" }}
       >
         <NavBar progress={this.state.progress} />

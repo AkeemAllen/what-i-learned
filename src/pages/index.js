@@ -9,20 +9,11 @@ import { rhythm } from "../utils/typography"
 import NavBar from "../components/NavBar/index"
 
 class BlogIndex extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      categoryName: `book`,
-    }
-  }
-
   render() {
     const { data } = this.props
-    const { categoryName } = this.state
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allContentfulBlogPost.edges
 
-    console.log(this.state.categoryName)
     return (
       <div
         style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#FFF" }}

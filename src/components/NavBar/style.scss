@@ -1,58 +1,56 @@
 .container {
+  display: flex;
+  font-family: "Merriweather", "Georgia", serif;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  position: fixed;
+  top: 0;
+  justify-content: flex-end;
+  align-content: center;
+
+  .innerNavBar {
     display: flex;
-    font-family: 'Merriweather','Georgia',serif;
-    flex-direction: column;
-    width: 100%;
-    background-color: rgb(245,245,245);
-    position: fixed;
-    top: 0;
-    justify-content: center;
-    // border-bottom: 2px solid #333;
-    overflow: hidden;
-    // box-shadow: 0px 0px 5px 0.25px #333;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 60%;
+    justify-content: space-between;
+    font-family: "Roboto Condensed", sans-serif;
 
-    .innerNavBar{
-        display: flex;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        margin-right: 2%;
-        margin-left: 2%;
-        width: 60%;
-        justify-content: space-between;
-        font-family: 'Roboto Condensed', sans-serif;
-
-        h3 {
-            font-family: inherit;
-            color: #FE5F55;
-            margin:0;
-        }
-
-        .btn-container {
-            a {
-                color:rgb(245,245,245);
-            }
-            .btn {
-                color: #FE5F55;
-                font-family: inherit;
-                background-color: inherit;
-                border: solid 1px #FE5F55;
-                border-radius: 4px;
-                transition-duration: 0.25s;
-                margin-left: 10px;
-                margin-right: 10px;
-                &:hover {
-                    cursor: pointer;
-                    background-color: #FE5F55;
-                    color: #333745;
-                    box-shadow: 0px 0px 12px 1px rgba(254, 95, 85, 1);
-                }
-                p {
-                    font-weight: bold;
-                    padding-left: 5px;
-                    padding-right: 5px;
-                    margin:0;
-                }
-            }
-        }
+    h3 {
+      font-family: inherit;
+      color: #fe5f55;
+      margin: 0;
     }
+
+    .btn-container {
+      a {
+        color: rgb(245, 245, 245);
+      }
+      .btn {
+        color: #fe5f55;
+        font-family: inherit;
+        background-color: inherit;
+        border: solid 1px #fe5f55;
+        border-radius: 4px;
+        transition-duration: 0.25s;
+        margin-left: 10px;
+        margin-right: 10px;
+        &:hover {
+          cursor: pointer;
+          background-color: #fe5f55;
+          color: #333745;
+          box-shadow: 0px 0px 12px 1px rgba(254, 95, 85, 1);
+        }
+        p {
+          font-weight: bold;
+          padding-left: 5px;
+          padding-right: 5px;
+          margin: 0;
+        }
+      }
+    }
+  }
 }
