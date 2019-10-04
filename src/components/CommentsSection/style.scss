@@ -1,4 +1,6 @@
 .base-container {
+  display: flex;
+  flex-direction: column;
   padding-top: 10px;
   .add-comment {
     textarea {

@@ -1,57 +1,59 @@
-import React, { Component } from "react"
-import { graphql } from "gatsby"
+import React, { Component } from "react";
+import axios from "axios";
 
 class SignUp extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      firstName: "",
-      lastName: "",
+      name: "",
       password: "",
       rePassword: "",
       email: "",
-    }
+    };
   }
 
   handleSubmit = () => {
-    const { firstName, lastName, password, email } = this.state
+    const { name, password, email } = this.state;
     if (
-      firstName.trim().length === 0 ||
-      lastName.trim().length === 0 ||
+      name.trim().length === 0 ||
       password.trim().length === 0 ||
       email.trim().length === 0
     ) {
-      return
+      return;
     }
 
     const requestBody = {
       query: `
-            mutation addUser {
-                addUser(firstName:"${firstName}",lastName:"${lastName}",email:"${email}",password:"${password}"){
+            mutation createUser {
+                createUser(userInput:{name:"${name}",email:"${email}",password:"${password}"}){
                     id
+                    name
                     email
-                    firstName
-                    lastName
                 }
             }
         `,
-    }
+    };
 
-    fetch("http://74.207.224.133:8081/graphql", {
-      method: "POST",
-      body: JSON.stringify(requestBody),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-  }
+    axios
+      .post("http://74.207.224.133:8081/graphql", JSON.stringify(requestBody), {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   handleChange = e => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     this.setState({
       [name]: value,
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -64,16 +66,8 @@ class SignUp extends Component {
             <div style={styles.formGroup}>
               <input
                 style={styles.input}
-                placeholder="FirstName"
-                name="firstName"
-                onChange={e => this.handleChange(e)}
-              />
-            </div>
-            <div style={styles.formGroup}>
-              <input
-                style={styles.input}
-                placeholder="LastName"
-                name="lastName"
+                placeholder="Name"
+                name="name"
                 onChange={e => this.handleChange(e)}
               />
             </div>
@@ -87,6 +81,7 @@ class SignUp extends Component {
             </div>
             <div style={styles.formGroup}>
               <input
+                type="password"
                 style={styles.input}
                 placeholder="Password"
                 name="password"
@@ -95,6 +90,7 @@ class SignUp extends Component {
             </div>
             <div style={styles.formGroup}>
               <input
+                type="password"
                 style={styles.input}
                 placeholder="Retype Password"
                 name="rePassword"
@@ -107,11 +103,11 @@ class SignUp extends Component {
           </button>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default SignUp
+export default SignUp;
 
 const styles = {
   baseContainer: {
@@ -157,4 +153,4 @@ const styles = {
     fontWeight: `bold`,
     color: `#FE5F55`,
   },
-}
+};

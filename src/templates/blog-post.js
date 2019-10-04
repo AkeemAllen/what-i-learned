@@ -1,54 +1,25 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
+import MarkDown from "markdown-to-jsx";
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
-import NavBar from "../components/NavBar"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-// import * as MarkDown from "react-markdown"
-import MarkDown from "markdown-to-jsx"
-import CommentSection from "../components/CommentsSection"
-import IsScrolling from "react-is-scrolling"
+import { rhythm, scale } from "../utils/typography";
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import CommentSection from "../components/CommentsSection";
+import NavBar from "../components/NavBar";
 
 class BlogPostTemplate extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      progress: 0,
-    }
-  }
-
-  IncrementProgress = () => {
-    this.setState({
-      progress: this.state.progress + 10,
-    })
-  }
-  DecrementProgress = () => {
-    this.setState({
-      progress: this.state.progress - 10,
-    })
-  }
-
-  handleProgressBar = () => {
-    if (true) {
-      console.log(this.props.IsScrolling)
-    }
-  }
-
   render() {
-    const post = this.props.data.contentfulBlogPost
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
-    const { IsScrollingDown, IsScrollingUp, IsScrolling } = this.props
+    const post = this.props.data.contentfulBlogPost;
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const { previous, next } = this.props.pageContext;
 
     return (
       <div
-        // onWheel={() => this.handleProgressBar()}
         style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#FFF" }}
       >
-        <NavBar progress={this.state.progress} />
+        <NavBar />
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title={post.title} description={post.description.description} />
           <article>
@@ -118,11 +89,11 @@ class BlogPostTemplate extends React.Component {
           </nav>
         </Layout>
       </div>
-    )
+    );
   }
 }
 
-export default IsScrolling(BlogPostTemplate)
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -144,4 +115,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

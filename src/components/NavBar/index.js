@@ -1,7 +1,6 @@
-import React, { Component } from "react"
-import "./style.scss"
-import { Link } from "gatsby"
-import ProgressBar from "../ProgressBar"
+import React from "react";
+import "./style.scss";
+import { Link } from "gatsby";
 
 const NavBar = props => {
   return (
@@ -26,7 +25,7 @@ const NavBar = props => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

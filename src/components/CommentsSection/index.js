@@ -1,12 +1,12 @@
-import React from "react"
-import "./style.scss"
-import Bio from "./commentAuthor"
-import Comment from "./comment"
-import axios from "axios"
+import React from "react";
+import "./style.scss";
+import Bio from "./commenterBio";
+import Comment from "./comment";
+// import axios from "axios"
 
 class CommentSection extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       comments: [
         {
@@ -16,19 +16,13 @@ class CommentSection extends React.Component {
           date: "September 11, 2019",
         },
       ],
-    }
+    };
   }
 
-  // componentDidMount(){
-  //   axios.ge
-  // }
-
-  // getAllComments
-
-  handleChange = () => {}
+  handleChange = () => {};
 
   render() {
-    const { comments } = this.state
+    const { comments } = this.state;
 
     return (
       <div className="base-container">
@@ -42,7 +36,7 @@ class CommentSection extends React.Component {
         </div>
         <div className="comment-container">
           {comments.map((comment, index) => (
-            <div>
+            <div key={index}>
               <Bio
                 key={index}
                 index={index}
@@ -54,8 +48,8 @@ class CommentSection extends React.Component {
           ))}
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default CommentSection
+export default CommentSection;
