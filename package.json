@@ -64,7 +64,7 @@
     "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve --host 74.207.224.133 -p 8000",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   }
 }
