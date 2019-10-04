@@ -19,7 +19,7 @@ class BlogPostTemplate extends React.Component {
       <div
         style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#FFF" }}
       >
-        <NavBar progress={this.state.progress} />
+        <NavBar />
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title={post.title} description={post.description.description} />
           <article>
