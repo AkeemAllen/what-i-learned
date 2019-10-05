@@ -35,11 +35,15 @@ class SignUp extends Component {
     };
 
     axios
-      .post("http://74.207.224.133:8081/graphql", JSON.stringify(requestBody), {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      .post(
+        "http://www.whatilearnedarchives.com:8081/graphql",
+        JSON.stringify(requestBody),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then(response => {
         console.log(response);
       })
