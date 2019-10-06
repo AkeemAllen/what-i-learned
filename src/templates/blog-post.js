@@ -42,7 +42,7 @@ class BlogPostTemplate extends React.Component {
                 {post.date}
               </p>
             </header>
-            <section>
+            <section style={{ lineHeight: "2.5" }}>
               <MarkDown children={post.body.body} />
             </section>
             <hr

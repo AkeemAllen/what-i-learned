@@ -39,9 +39,10 @@ class Layout extends React.Component {
           marginLeft: `auto`,
           marginRight: `auto`,
           maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          paddingTop: "7%",
-          minHeight: "100vh",
+          padding: `${rhythm(1.5)} ${rhythm(0.05)}`,
+          paddingTop: "30px",
+          // minHeight: "100vh",
+          // fontFamily: `"Catamaran"`,
         }}
       >
         <header>{header}</header>

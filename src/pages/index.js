@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Image from "gatsby-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -30,6 +31,20 @@ class BlogIndex extends React.Component {
               const title = node.title || node.slug
               return (
                 <article key={node.slug}>
+                  {/* <Image
+                    fixed={node.indexPhoto.fixed.src}
+                    alt={node.indexPhoto.description}
+                    style={{
+                      display: "flex",
+                      margin: "0px",
+                      minWidth: "50%",
+                    }}
+                    imgStyle={{ borderRadius: `50%` }}
+                  /> */}
+                  <img
+                    src="https://images.pexels.com/photos/2976176/pexels-photo-2976176.jpeg?cs=srgb&dl=architecture-blue-sky-building-2976176.jpg&fm=jpg"
+                    style={{ minWidth: "100%" }}
+                  />
                   <header>
                     <h3
                       style={{
@@ -44,6 +59,7 @@ class BlogIndex extends React.Component {
                   </header>
                   <section>
                     <p
+                      style={{ color: "#7d7d7d", lineHeight: "1.4" }}
                       dangerouslySetInnerHTML={{
                         __html: node.description.description,
                       }}
@@ -77,6 +93,15 @@ export const pageQuery = graphql`
           slug
           date(formatString: "MMMM DD, YYYY")
           category
+          indexPhoto {
+            description
+            fixed {
+              src
+            }
+            file {
+              url
+            }
+          }
         }
       }
     }

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Knowledge Archive`,
+    title: `What I Learned`,
     author: `Akeem Allen`,
     description: `A knowledge archive container all that I have learned`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
@@ -13,8 +13,8 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-      }
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
     },
     // {
     //   resolve: `gatsby-source-filesystem`,

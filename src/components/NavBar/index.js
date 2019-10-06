@@ -10,11 +10,11 @@ const NavBar = () => {
           <h3>WHAT I LEARNED</h3>
         </div>
         <div className="btn-container">
-          <Link to="/" className="link">
+          {/* <Link to="/" className="link">
             <button className="btn">
               <p>Home</p>
             </button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>
