@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     # specify working directory
-    working_directory: ~/tmp
+    # working_directory: ~/tmp
     docker:
       # specify the version you desire here
       - image: circleci/node:10.16
@@ -26,8 +26,10 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run: yarn build
-      - store_artifacts:
-          path: /public
+      - persist_to_workspace:
+          root: public/
+          paths:
+            - index.html
 
   test:
     docker:
@@ -40,11 +42,20 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:10.16
-
     steps:
+      - attach_workspace:
+          at: public/
       - run:
           name: Deploying App to Server
           command: echo "Deployed"
+      - run:
+          name: Testing persistence
+          command: |
+            if [[$(cat public/index.html != null)]]; then
+              echo "We got something";
+            else
+              echo "Nope"; exit 1
+            fi
 
 workflows:
   version: 2
