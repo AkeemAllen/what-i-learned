@@ -18,3 +18,7 @@ jobs:
       - checkout
       - run: yarn install
       - run: yarn build
+
+      - store_artifacts:
+        path: public/
+        destination: static_site/
