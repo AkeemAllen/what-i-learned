@@ -26,10 +26,8 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run: yarn build
-      - persist_to_workspace:
-          root: public/
-          paths:
-            - index.html
+      - store_artifacts:
+          path: index.html
 
   test:
     docker:
@@ -44,8 +42,6 @@ jobs:
       - image: circleci/node:10.16
     steps:
       - run: sleep 100
-      - attach_workspace:
-          at: public/
       - run:
           name: Deploying App to Server
           command: echo "Deployed"
@@ -60,6 +56,4 @@ workflows:
     jobs:
       - test
       - build
-      - deploy:
-          requires:
-            - build
+      - deploy
