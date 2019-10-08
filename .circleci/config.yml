@@ -5,35 +5,50 @@
 version: 2
 jobs:
   build:
+    # specify working directory
+    working_directory: ~/tmp
     docker:
       # specify the version you desire here
       - image: circleci/node:10.16
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/tmp
-
     steps:
+      # cloning git repo
       - checkout
-
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
-
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
-
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
       - run: yarn build
-
       - store_artifacts:
           path: /public
+
+  test:
+    docker:
+      - image: circleci/node:10.16
+    steps:
+      - run:
+          name: Running Tests
+          command: echo "Tested"
+
+  deploy:
+    docker:
+      - image: circleci/node:10.16
+
+    steps:
+      - run:
+          name: Deploying App to Server
+          command: echo "Deployed"
+
+workflows:
+  test_build_deploy:
+    jobs:
+      - test
+      - build
+      - deploy
