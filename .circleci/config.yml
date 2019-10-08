@@ -54,7 +54,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh akeem@74.207.224.133 "echo "test" > test.test"
+            ssh akeem@74.207.224.133 "echo $(cat public/index.html) > testFile.txt"
 
 workflows:
   version: 2
