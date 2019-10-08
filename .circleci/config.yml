@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     # specify working directory
-    working_directory: ~/public
+    # working_directory: ~/public
     docker:
       # specify the version you desire here
       - image: circleci/node:10.16
@@ -17,17 +17,21 @@ jobs:
           name: Restore Yarn Package Cache
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
-      # - run:
-      #     name: Install Dependencies
-      #     command: yarn install --frozen-lockfile
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
       # - save_cache:
       #     name: Save Yarn Package Cache
       #     key: yarn-packages-{{ checksum "yarn.lock" }}
       #     paths:
       #       - ~/.cache/yarn
       - run: yarn build
+      - run:
+          name: Testing if anything is there
+          command: |
+            echo $(cat public/index.html)
       - store_artifacts:
-          path: index.html
+          path: public/index.html
 
   test:
     docker:
@@ -45,10 +49,6 @@ jobs:
       - run:
           name: Deploying App to Server
           command: echo "Deployed"
-      - run:
-          name: Testing persistence
-          command: |
-            echo $(cat public/index.html)
 
 workflows:
   version: 2
