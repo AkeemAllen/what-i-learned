@@ -20,5 +20,5 @@ jobs:
       - run: yarn build
 
       - store_artifacts:
-        path: /public/
-        destination: /static_site
+          path: /public/
+          destination: /static_site/
