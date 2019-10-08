@@ -31,7 +31,7 @@ jobs:
           command: |
             echo $(cat public/index.html)
       - store_artifacts:
-          path: public/index.html
+          path: public/
 
   test:
     docker:
