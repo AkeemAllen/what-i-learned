@@ -60,4 +60,6 @@ workflows:
     jobs:
       - test
       - build
-      - deploy
+      - deploy:
+          requires:
+            - build
