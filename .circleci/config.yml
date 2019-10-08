@@ -52,11 +52,7 @@ jobs:
       - run:
           name: Testing persistence
           command: |
-            if [[$(cat public/index.html != null)]]; then
-              echo "We got something";
-            else
-              echo "Nope"; exit 1
-            fi
+            echo $(cat public/index.html)
 
 workflows:
   version: 2
