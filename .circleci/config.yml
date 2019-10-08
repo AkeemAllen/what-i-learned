@@ -21,4 +21,4 @@ jobs:
 
       - store_artifacts:
         path: /public/
-        destination: /static_site/
+        destination: /static_site
