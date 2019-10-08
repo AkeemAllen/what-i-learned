@@ -47,6 +47,7 @@ jobs:
           command: echo "Deployed"
 
 workflows:
+  version: 2
   test_build_deploy:
     jobs:
       - test
