@@ -43,7 +43,7 @@ jobs:
     docker:
       - image: circleci/node:10.16
     steps:
-      - sleep: 100
+      - run: sleep 100
       - attach_workspace:
           at: public/
       - run:
