@@ -1,1 +1,1 @@
-ssh -o StrictHostKeyChecking=no akeem@74.207.224.133
+echo "${password}"|ssh -o akeem@74.207.224.133
