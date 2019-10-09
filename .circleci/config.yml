@@ -58,7 +58,7 @@ jobs:
       #       echo "Y"
       - run:
           name: Change Privileges
-          command: chmod 755 .circleci/scripts/deploy.sh
+          command: chmod 755 .circleci/scripts/deploy.sh .circleci/scripts/expect.sh
       - run:
           name: Deploy Over SSH
           command: .circleci/scripts/deploy.sh

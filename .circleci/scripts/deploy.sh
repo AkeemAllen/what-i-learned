@@ -4,4 +4,4 @@ fi
 
 yes | sudo apt-get install expect
 
-ssh akeem@74.207.224.133
+./expect.sh
