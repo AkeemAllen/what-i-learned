@@ -63,7 +63,12 @@ jobs:
             chmod 755 .circleci/scripts/expect.sh
       - run:
           name: Copy files to Server
-          command: scp ~/project/public ssh akeem@74.207.224.133:~/
+          command: |
+            if [ -z `ssh-keygen -F 74.207.224.133` ]; then
+              ssh-keyscan -H 74.207.224.133 >> ~/.ssh/known_hosts
+            fi
+
+            scp ~/project/public ssh akeem@74.207.224.133:~/
       - run:
           name: Deploy Over SSH
           command: .circleci/scripts/deploy.sh
