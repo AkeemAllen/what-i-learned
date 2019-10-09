@@ -68,10 +68,12 @@ jobs:
               ssh-keyscan -H 74.207.224.133 >> ~/.ssh/known_hosts
             fi
 
-            scp ~/project/public ssh akeem@74.207.224.133:~/
-      - run:
-          name: Deploy Over SSH
-          command: .circleci/scripts/deploy.sh
+            yes | sudo apt-get install expect
+
+            .circleci/scripts/cpyToServer.sh
+      # - run:
+      #     name: Deploy Over SSH
+      #     command: .circleci/scripts/deploy.sh
 
 workflows:
   version: 2
