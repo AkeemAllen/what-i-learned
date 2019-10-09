@@ -8,8 +8,8 @@ echo "$(ls -a public/)"
 # yes | sudo apt-get install expect
 
 # # Successfuly logs me into server
-# .circleci/scripts/cpyToServer.sh
+.circleci/scripts/cpyToServer.sh
 
 # # Move public file to /var/www
 # # echo "$(sudo mv public/ /var/www/)"
-# echo "Got Here"
+echo "Got Here"
