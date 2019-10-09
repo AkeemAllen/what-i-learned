@@ -1,11 +1,11 @@
 if [ -z `ssh-keygen -F 74.207.224.133` ]; then
   ssh-keyscan -H 74.207.224.133 >> ~/.ssh/known_hosts
 fi
-
-ssh akeem@74.207.224.133
-
 echo "${password}"
 
 echo "We made it"
+
+ssh akeem@74.207.224.133
+
 
 echo "$(cat what-i-learned/package.json)"
