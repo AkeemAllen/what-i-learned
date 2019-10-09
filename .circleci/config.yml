@@ -61,7 +61,7 @@ jobs:
           command: chmod 755 .circleci/scripts/deploy
       - run:
           name: Deploy Over SSH
-          command: .circleci/scripts/deploy
+          command: ssh akeem@74.207.224.133 .circleci/scripts/deploy
 
 workflows:
   version: 2
