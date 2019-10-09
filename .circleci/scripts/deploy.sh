@@ -5,3 +5,5 @@ fi
 yes | sudo apt-get install expect
 
 .circleci/scripts/expect.sh
+
+echo "$(ls -a)"
