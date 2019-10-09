@@ -1,3 +1,4 @@
-ssh akeem@74.207.224.133
+
+ssh -Q yes akeem@74.207.224.133
 
 echo "We made it"
