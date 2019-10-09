@@ -1,4 +1,4 @@
-#!bin/bash
+#!/usr/bin/expect -f
 ssh akeem@74.207.224.133
 
 expect "akeem@74.207.224.133's password"
