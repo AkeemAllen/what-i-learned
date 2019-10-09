@@ -1,3 +1,3 @@
-echo "We made it"
+echo "yes" | ssh akeem@74.207.224.133 
 
 echo "$(mkdir loggedin)"
