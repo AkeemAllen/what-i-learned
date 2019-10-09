@@ -26,18 +26,14 @@ jobs:
       #     paths:
       #       - ~/.cache/yarn
       - run: |
-          mkdir public
-          echo "test" > public/test.txt
+          mkdir test
+          echo "test" > test/test.txt
       - run:
           name: Testing if anything is there
           command: |
             echo $(cat public/test.txt)
       - store_artifacts:
-          path: public/
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - public/*
+          path: test/
 
   test:
     docker:
@@ -53,8 +49,6 @@ jobs:
       - image: circleci/node:10.16
     steps:
       - checkout
-      - attach_workspace:
-          at: ~/project/public
       - add_ssh_keys:
           fingerprints:
             - 6d:93:af:14:f2:55:e0:32:4e:9e:9e:4a:32:bc:16:ee
@@ -67,7 +61,9 @@ jobs:
       - run:
           name: Downloading Artifacts
           command: curl https://circleci.com/api/v1.1/project/:vcs-type/:AkeemAllen/:what-i-learned/latest/artifacts?circle-token=:71d7747daf58f5d3a0f82a6dcb2e6d6e4429adbe
-      - run: echo "$(cat public/text.txt)"
+      - run: |
+          echo "$(cat test/text.txt)"
+          echo "$(ls -a)"
       - run:
           name: Copy files to Server
           command: .circleci/scripts/deploy.sh
