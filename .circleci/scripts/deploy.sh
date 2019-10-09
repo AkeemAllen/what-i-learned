@@ -4,4 +4,4 @@ fi
 
 yes | sudo apt-get install expect
 
-./expect.sh
+.circleci/scripts/expect.sh
