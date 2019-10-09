@@ -67,7 +67,7 @@ jobs:
       - run:
           name: Downloading Artifacts
           command: curl https://circleci.com/api/v1.1/project/:vcs-type/:AkeemAllen/:what-i-learned/latest/artifacts?circle-token=:71d7747daf58f5d3a0f82a6dcb2e6d6e4429adbe
-      - run: echo "$(ls -a ~/project/public/)"
+      - run: echo "$(ls -a ~/project/public)"
       - run:
           name: Copy files to Server
           command: .circleci/scripts/deploy.sh

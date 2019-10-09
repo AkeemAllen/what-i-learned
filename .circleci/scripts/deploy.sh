@@ -5,11 +5,11 @@ fi
 echo "$(ls -a)"
 echo "$(ls -a public/)"
 
-yes | sudo apt-get install expect
+# yes | sudo apt-get install expect
 
-# Successfuly logs me into server
-.circleci/scripts/cpyToServer.sh
+# # Successfuly logs me into server
+# .circleci/scripts/cpyToServer.sh
 
-# Move public file to /var/www
-# echo "$(sudo mv public/ /var/www/)"
-echo "Got Here"
+# # Move public file to /var/www
+# # echo "$(sudo mv public/ /var/www/)"
+# echo "Got Here"
