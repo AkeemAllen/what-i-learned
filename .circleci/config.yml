@@ -66,6 +66,9 @@ jobs:
             chmod 755 .circleci/scripts/expect.sh
             chmod 755 .circleci/scripts/cpyToServer.sh
       - run:
+          name: Downloading Artifacts
+          command: curl https://circleci.com/api/v1.1/project/:vcs-type/:AkeemAllen/:what-i-learned/latest/artifacts?circle-token=:$CIRCLE_TOKEN
+      - run:
           name: Copy files to Server
           command: .circleci/scripts/deploy.sh
       # - run:
