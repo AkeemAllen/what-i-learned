@@ -3,9 +3,11 @@ if [ -z `ssh-keygen -F 74.207.224.133` ]; then
 fi
 
 yes | sudo apt-get install expect
+echo "Got Here"
 
 # Successfuly logs me into server
-.circleci/scripts/expect.sh
+.circleci/scripts/cpyToServer.sh
 
 # Move public file to /var/www
-echo "$(sudo mv public/ /var/www/)"
+# echo "$(sudo mv public/ /var/www/)"
+echo "Got Here"
