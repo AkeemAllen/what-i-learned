@@ -58,10 +58,10 @@ jobs:
       #       echo "Y"
       - run:
           name: Change Privileges
-          command: chmod 755 .circleci/deploy
+          command: chmod 755 .circleci/scripts/deploy
       - run:
           name: Deploy Over SSH
-          command: .circleci/deploy
+          command: .circleci/scripts/deploy
 
 workflows:
   version: 2

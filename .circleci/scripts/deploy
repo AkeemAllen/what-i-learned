@@ -1,0 +1,7 @@
+#!usr/bin/
+
+ssh akeem@74.207.224.133
+
+sleep 10
+
+echo "yes\r"
