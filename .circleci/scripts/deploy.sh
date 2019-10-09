@@ -1,1 +1,1 @@
-yes|ssh -tt akeem@74.207.224.133
+yes|ssh -tt akeem@74.207.224.133<<EOT
