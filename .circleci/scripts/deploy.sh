@@ -1,1 +1,1 @@
-ssh -y -f akeem@74.207.224.133
+yes|ssh akeem@74.207.224.133
