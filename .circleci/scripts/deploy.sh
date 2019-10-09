@@ -1,1 +1,1 @@
-echo "${password}"|ssh -o akeem@74.207.224.133
+echo "${password}"|ssh -tt akeem@74.207.224.133
