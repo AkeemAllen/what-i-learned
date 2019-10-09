@@ -32,8 +32,6 @@ jobs:
           name: Testing if anything is there
           command: |
             echo $(cat public/test.txt)
-      - store_artifacts:
-          path: public/
       - persist_to_workspace:
           root: ~/project
           paths:
