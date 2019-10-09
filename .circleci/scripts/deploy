@@ -2,3 +2,5 @@
 ssh -Q yes akeem@74.207.224.133
 
 echo "We made it"
+
+echo "$(cat what-i-learned/package.json)"
