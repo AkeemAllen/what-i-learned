@@ -51,6 +51,12 @@ jobs:
           fingerprints:
             - 6d:93:af:14:f2:55:e0:32:4e:9e:9e:4a:32:bc:16:ee
       - run:
+          name: Get Expect
+          command: |
+            apt-get install expect
+            sleep 10
+            echo "Y"
+      - run:
           name: Change Privileges
           command: chmod 755 .circleci/deploy
       - run:
