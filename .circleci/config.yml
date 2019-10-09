@@ -58,10 +58,10 @@ workflows:
   version: 2
   test_build_deploy:
     jobs:
-      - test
-      - build:
-          requires:
-            - test
+      # - test
+      # - build:
+      #     requires:
+      #       - test
       - deploy:
           requires:
             - build
