@@ -2,4 +2,6 @@ if [ -z `ssh-keygen -F 74.207.224.133` ]; then
   ssh-keyscan -H 74.207.224.133 >> ~/.ssh/known_hosts
 fi
 
-echo "${password}"|ssh -tt -p ${password} akeem@74.207.224.133
+yes | sudo apt-get -tt install expect
+
+ssh akeem@74.207.224.133
