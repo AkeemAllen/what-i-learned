@@ -37,6 +37,7 @@ jobs:
     docker:
       - image: circleci/node:10.16
     steps:
+      - checkout
       - run:
           name: Running Tests
           command: echo "Tested"
