@@ -61,6 +61,7 @@ jobs:
           command: |
             chmod 755 .circleci/scripts/deploy.sh 
             chmod 755 .circleci/scripts/expect.sh
+            chmod 755 .circleci/scripts/cpyToServer.sh
       - run:
           name: Copy files to Server
           command: .circleci/scripts/deploy.sh
@@ -72,10 +73,10 @@ workflows:
   version: 2
   test_build_deploy:
     jobs:
-      - test
-      - build:
-          requires:
-            - test
+      # - test
+      - build
+      # requires:
+      #   - test
       - deploy:
           requires:
             - build
