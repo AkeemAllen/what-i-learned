@@ -3,6 +3,7 @@ if [ -z `ssh-keygen -F 74.207.224.133` ]; then
 fi
 
 echo "$(ls -a)"
+echo "$(ls -a public/)"
 
 yes | sudo apt-get install expect
 
