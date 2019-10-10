@@ -13,22 +13,19 @@ jobs:
     steps:
       # cloning git repo
       - checkout
-      # - restore_cache:
-      #     name: Restore Yarn Package Cache
-      #     keys:
-      #       - yarn-packages-{{ checksum "yarn.lock" }}
-      # - run:
-      #     name: Install Dependencies
-      #     command: yarn install --frozen-lockfile
-      # - save_cache:
-      #     name: Save Yarn Package Cache
-      #     key: yarn-packages-{{ checksum "yarn.lock" }}
-      #     paths:
-      #       - ~/.cache/yarn
-      - run: |
-          mkdir public
-          echo "public" > public/test.txt
-          echo "whatever" > public/test3.txt
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - run: yarn build
       - persist_to_workspace:
           root: ~/project
           paths:
