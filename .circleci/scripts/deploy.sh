@@ -29,7 +29,8 @@ function MoveFiles(){
     mv public/ what_i_learned_blog
 }
 
-sshpass -p ${password} ssh akeem@74.207.224.133 "mv public/ what_i_learned_blog"
-
+sshpass -p ${password} ssh akeem@74.207.224.133 
+"mv public/ what_i_learned_blog"
+"mv what_i_learned_blog/ /var/www/"
 # # Move public file to /var/www
 # # echo "$(sudo mv public/ /var/www/)"
