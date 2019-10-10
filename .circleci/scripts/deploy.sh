@@ -19,7 +19,8 @@ expect "akeem@74.207.224.133's password"
 send "akstar4321\r"
 
 spawn echo "Hello"
-expect "Hello"
+interact
+spawn ls -a
 interact
 EOD
 # # Move public file to /var/www
