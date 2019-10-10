@@ -25,8 +25,8 @@ yes | sudo apt-get install sshpass
 # interact
 # EOD
 
-sshpass -p ${password} ssh akeem@74.207.224.133
-ls -a
+sshpass -p ${password} ssh akeem@74.207.224.133 ls -a
 
+echo "$(ls -a)"
 # # Move public file to /var/www
 # # echo "$(sudo mv public/ /var/www/)"
