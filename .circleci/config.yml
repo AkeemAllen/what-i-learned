@@ -58,18 +58,18 @@ jobs:
       - run:
           name: Copy files to Server
           command: .circleci/scripts/deploy.sh
-      # - run:
-      #     name: Deploy Over SSH
-      #     command: .circleci/scripts/deploy.sh
 
 workflows:
   version: 2
   test_build_deploy:
     jobs:
-      # - test
-      - build
-      # requires:
-      #   - test
+      - test
+      - build:
+          requires:
+            - test
       - deploy:
           requires:
             - build
+          filters:
+            branches:
+              only: master
