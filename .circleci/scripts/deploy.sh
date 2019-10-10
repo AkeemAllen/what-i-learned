@@ -24,12 +24,7 @@ yes | sudo apt-get install sshpass
 # spawn ls -a
 # interact
 # EOD
-function MoveFiles(){
-    ls -a
-    mv public/ what_i_learned_blog
-}
 
-sshpass -p ${password} ssh akeem@74.207.224.133 "mv public/ what_i_learned_blog &&
-mv what_i_learned_blog/ /var/www/"
+sshpass -p ${password} ssh akeem@74.207.224.133 "mv public/ what_i_learned_blog && mv what_i_learned_blog/ /var/www/"
 # # Move public file to /var/www
 # # echo "$(sudo mv public/ /var/www/)"
