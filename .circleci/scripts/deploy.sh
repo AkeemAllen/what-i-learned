@@ -3,6 +3,7 @@ if [ -z `ssh-keygen -F 74.207.224.133` ]; then
 fi
 
 yes | sudo apt-get install expect
+yes | sudo apt-get install sshpass
 
 # # Successfuly logs me into server
 .circleci/scripts/cpyToServer.sh
@@ -13,16 +14,19 @@ yes | sudo apt-get install expect
 # send "akstar4321\r"
 # EOD
 
-/usr/bin/expect <<EOD
-spawn ssh akeem@74.207.224.133
-expect "akeem@74.207.224.133's password"
-send "akstar4321\r"
+# /usr/bin/expect <<EOD
+# spawn ssh akeem@74.207.224.133
+# expect "akeem@74.207.224.133's password"
+# send "akstar4321\r"
 
-spawn echo "Hello"
-interact
-spawn ls -a
-interact
-EOD
+# spawn echo "Hello"
+# interact
+# spawn ls -a
+# interact
+# EOD
+
+sshpass -p ${password} ssh akeem@74.207.224.133
+ls -a
+
 # # Move public file to /var/www
 # # echo "$(sudo mv public/ /var/www/)"
-echo "$(ls -a)"
