@@ -9,5 +9,3 @@ send "akstar4321\r"
 
 # spawn mv public/ what_i_learned_blog
 # # send "akstar4321\r"
-
-interact
