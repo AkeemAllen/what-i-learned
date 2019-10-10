@@ -29,7 +29,7 @@ function MoveFiles(){
     mv public/ what_i_learned_blog
 }
 
-sshpass -p ${password} ssh akeem@74.207.224.133 MoveFiles .circleci/scripts/serverCommands.sh
+sshpass -p ${password} ssh akeem@74.207.224.133 .circleci/scripts/serverCommands.sh
 
 # # Move public file to /var/www
 # # echo "$(sudo mv public/ /var/www/)"
