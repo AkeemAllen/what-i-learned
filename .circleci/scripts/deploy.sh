@@ -10,10 +10,12 @@ yes | sudo apt-get install expect
 # # Successfuly logs me into server
 # .circleci/scripts/cpyToServer.sh
 
-/usr/bin/expect -c `spawn scp -r public/ ssh akeem@74.207.224.133:~/`
-/usr/bin/expect -c `expect "akeem@74.207.224.133's password"`
-/usr/bin/expect -c `send "akstar4321\r"`
-
+/usr/bin/expect <<EOD
+spawn scp -r public/ ssh akeem@74.207.224.133:~/
+expect "akeem@74.207.224.133's password"
+send "akstar4321\r"
+interact
+EOD
 # # Move public file to /var/www
 # # echo "$(sudo mv public/ /var/www/)"
 echo "$(ls -a)"
