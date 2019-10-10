@@ -10,7 +10,7 @@ yes | sudo apt-get install expect
 # # Successfuly logs me into server
 # .circleci/scripts/cpyToServer.sh
 
-/usr/bin/expect <<EOD
+/usr/bin/expect -f <<EOD
 spawn scp -r public/ ssh akeem@74.207.224.133:~/
 expect "akeem@74.207.224.133's password"
 send "akstar4321\r"
