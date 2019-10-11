@@ -13,4 +13,4 @@ fi
 yes | sudo apt-get install expect
 
 # Successfuly logs me into server
-.circleci/scripts/cpyToServer.sh server ${password}
+.circleci/scripts/cpyToServer.sh $server ${password}
