@@ -12,20 +12,23 @@ jobs:
       - image: circleci/node:10.16
     steps:
       # cloning git repo
-      - checkout
-      - restore_cache:
-          name: Restore Yarn Package Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
-      - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile
-      - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
-      - run: yarn build
+      # - checkout
+      # - restore_cache:
+      #     name: Restore Yarn Package Cache
+      #     keys:
+      #       - yarn-packages-{{ checksum "yarn.lock" }}
+      # - run:
+      #     name: Install Dependencies
+      #     command: yarn install --frozen-lockfile
+      # - save_cache:
+      #     name: Save Yarn Package Cache
+      #     key: yarn-packages-{{ checksum "yarn.lock" }}
+      #     paths:
+      #       - ~/.cache/yarn
+      # - run: yarn build
+      - run: |
+          mkdir public
+          echo "test" > public/test.txt
       - persist_to_workspace:
           root: ~/project
           paths:
@@ -84,10 +87,10 @@ workflows:
   version: 2
   test_build_deploy:
     jobs:
-      - test
-      - build:
-          requires:
-            - test
+      # - test
+      # - build:
+      #     requires:
+      #       - test
       - deploy_master:
           requires:
             - build
