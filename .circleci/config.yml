@@ -39,12 +39,12 @@ jobs:
           name: Running Tests
           command: echo "Tested"
 
-  deploy:
+  deploy_master:
     name: Deploy to Linode
     docker:
       - image: circleci/node:10.16
     steps:
-      - checkout
+      # - checkout
       - attach_workspace:
           at: ~/project/
       - add_ssh_keys:
@@ -57,7 +57,26 @@ jobs:
             chmod 755 .circleci/scripts/cpyToServer.sh
       - run:
           name: Copy files to Server
-          command: .circleci/scripts/deploy.sh
+          command: .circleci/scripts/deploy.sh master
+
+  deploy_develop:
+    name: Deploy to Linode
+    docker:
+      - image: circleci/node:10.16
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - add_ssh_keys:
+          fingerprints:
+            - 6d:93:af:14:f2:55:e0:32:4e:9e:9e:4a:32:bc:16:ee
+      - run:
+          name: Change Privileges
+          command: |
+            chmod 755 .circleci/scripts/deploy.sh 
+            chmod 755 .circleci/scripts/cpyToServer.sh
+      - run:
+          name: Copy files to Server
+          command: .circleci/scripts/deploy.sh develop
 
 workflows:
   version: 2
@@ -67,9 +86,15 @@ workflows:
       - build:
           requires:
             - test
-      - deploy:
+      - deploy_master:
           requires:
             - build
           filters:
             branches:
               only: master
+      - deploy_develop:
+          requires:
+            - build
+          filters:
+            branches:
+              only: develop
