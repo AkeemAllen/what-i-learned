@@ -3,9 +3,9 @@ module.exports = {
     title: `What I Learned`,
     author: `Akeem Allen`,
     description: `A knowledge archive container all that I have learned`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://www.whatilearnedarchives.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `Akstar39306982`,
     },
   },
   plugins: [
@@ -64,8 +64,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `What I Learned Archives`,
+        short_name: `whatilearned`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

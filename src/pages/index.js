@@ -41,10 +41,10 @@ class BlogIndex extends React.Component {
                     }}
                     imgStyle={{ borderRadius: `50%` }}
                   /> */}
-                  <img
+                  {/* <img
                     src="https://images.pexels.com/photos/2976176/pexels-photo-2976176.jpeg?cs=srgb&dl=architecture-blue-sky-building-2976176.jpg&fm=jpg"
                     style={{ minWidth: "100%" }}
-                  />
+                  /> */}
                   <header>
                     <h3
                       style={{
