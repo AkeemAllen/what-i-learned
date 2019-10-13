@@ -8,7 +8,8 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 import NavBar from "../components/NavBar/index"
-import SplashImage from "../components/BackgroundImage"
+import SplashImage from "../components/SplashImage"
+import { black } from "ansi-colors"
 
 class BlogIndex extends React.Component {
   render() {
@@ -22,9 +23,9 @@ class BlogIndex extends React.Component {
       >
         {/* <NavBar /> */}
         <SplashImage />
-        {/* <Layout location={this.props.location} title={siteTitle}>
+        <Layout location={this.props.location} title={siteTitle}>
           <SEO title="All posts" />
-          <Bio />
+          {/* <Bio /> */}
           {posts
             // .filter(({node}) =>
             //   node.category.includes(this.state.categoryName)
@@ -32,31 +33,62 @@ class BlogIndex extends React.Component {
             .map(({ node }) => {
               const title = node.title || node.slug
               return (
-                <article key={node.slug}>
-                  <header>
-                    <h3
-                      style={{
-                        marginBottom: rhythm(1 / 4),
-                      }}
-                    >
-                      <Link style={{ boxShadow: `none` }} to={node.slug}>
-                        {title}
-                      </Link>
-                    </h3>
-                    <small>{node.date}</small>
-                  </header>
-                  <section>
-                    <p
-                      style={{ color: "#7d7d7d", lineHeight: "1.4" }}
-                      dangerouslySetInnerHTML={{
-                        __html: node.description.description,
-                      }}
-                    />
-                  </section>
+                <article
+                  key={node.slug}
+                  style={{
+                    display: `flex`,
+                    flexDirection: `column`,
+                    alignItems: `center`,
+                  }}
+                >
+                  {/* <div style={{ paddingTop: `10%`, paddingBottom: `10%` }}>
+                    <h1 style={{ fontSize: `70px` }}>Articles</h1>
+                  </div> */}
+                  <div>
+                    <header style={{ marginTop: 0, marginBottom: `10px` }}>
+                      <h1
+                        style={{
+                          marginBottom: rhythm(1 / 4),
+                          fontSize: `38px`,
+                          fontWeight: `bold`,
+                        }}
+                      >
+                        <Link
+                          style={{ boxShadow: `none`, color: `black` }}
+                          to={node.slug}
+                        >
+                          {title}
+                        </Link>
+                      </h1>
+                      <h4
+                        style={{
+                          textTransform: `none`,
+                          fontFamily: `Montserrat`,
+                          color: `rgba(112, 119, 133,0.5)`,
+                          margin: 0,
+                          marginBottom: `5px`,
+                          fontSize: `20px`,
+                          position: `relative`,
+                          left: `70%`,
+                        }}
+                      >
+                        {node.category}
+                      </h4>
+                      <small>{node.date}</small>
+                    </header>
+                    <section>
+                      <p
+                        style={{ color: "#7d7d7d", lineHeight: "1.4" }}
+                        dangerouslySetInnerHTML={{
+                          __html: node.description.description,
+                        }}
+                      />
+                    </section>
+                  </div>
                 </article>
               )
             })}
-        </Layout> */}
+        </Layout>
       </div>
     )
   }

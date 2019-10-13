@@ -7,9 +7,9 @@ const SplashImage = () => {
   return (
     <div className="base-container">
       <div className="overlay">
-        {/* <div className="top">
-        <NavBar />
-      </div> */}
+        <div className="top">
+          <NavBar />
+        </div>
         <div className="middle">
           <div className="text">
             <h1>What I Learned</h1>

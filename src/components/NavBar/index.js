@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import "./style.scss"
 import { Link } from "gatsby"
-import icon from "../../../content/assets/gatsby-icon.png"
+import icon from "../../../content/assets/placeholder.com-logo3.png"
 
 const NavBar = () => {
   return (

@@ -38,20 +38,20 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(24),
+          maxWidth: `40%`,
           padding: `${rhythm(1.5)} ${rhythm(0.05)}`,
           paddingTop: "30px",
           // minHeight: "100vh",
           // fontFamily: `"Catamaran"`,
         }}
       >
-        <header>{header}</header>
+        {/* <header>{header}</header> */}
         <main>{children}</main>
-        <footer>
+        {/* <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        </footer> */}
       </div>
     )
   }
