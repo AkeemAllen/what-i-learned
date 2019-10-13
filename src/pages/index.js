@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 import NavBar from "../components/NavBar/index"
+import SplashImage from "../components/BackgroundImage"
 
 class BlogIndex extends React.Component {
   render() {
@@ -19,8 +20,9 @@ class BlogIndex extends React.Component {
       <div
         style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#FFF" }}
       >
-        <NavBar />
-        <Layout location={this.props.location} title={siteTitle}>
+        {/* <NavBar /> */}
+        <SplashImage />
+        {/* <Layout location={this.props.location} title={siteTitle}>
           <SEO title="All posts" />
           <Bio />
           {posts
@@ -31,20 +33,6 @@ class BlogIndex extends React.Component {
               const title = node.title || node.slug
               return (
                 <article key={node.slug}>
-                  {/* <Image
-                    fixed={node.indexPhoto.fixed.src}
-                    alt={node.indexPhoto.description}
-                    style={{
-                      display: "flex",
-                      margin: "0px",
-                      minWidth: "50%",
-                    }}
-                    imgStyle={{ borderRadius: `50%` }}
-                  /> */}
-                  {/* <img
-                    src="https://images.pexels.com/photos/2976176/pexels-photo-2976176.jpeg?cs=srgb&dl=architecture-blue-sky-building-2976176.jpg&fm=jpg"
-                    style={{ minWidth: "100%" }}
-                  /> */}
                   <header>
                     <h3
                       style={{
@@ -68,7 +56,7 @@ class BlogIndex extends React.Component {
                 </article>
               )
             })}
-        </Layout>
+        </Layout> */}
       </div>
     )
   }

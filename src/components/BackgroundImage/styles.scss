@@ -1,0 +1,50 @@
+.base-container {
+  display: block;
+  width: 100%;
+  height: 70vh;
+  background-image: url("../../../content/assets/index-background-books.jpg");
+  background-size: inherit;
+  .overlay {
+    position: absolute;
+    // width: 100%;
+    height: inherit;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    // z-index: 2;
+    overflow: hidden;
+    opacity: 1;
+  }
+
+  .top {
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  .middle {
+    transition: 0.5s ease;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+
+    .text {
+      color: white;
+      padding: 16px 32px;
+      h1 {
+        font-size: 100px;
+        text-shadow: 0 0 5px black;
+      }
+      h3 {
+        font-size: 30px;
+        text-shadow: 0 0 5px black;
+      }
+    }
+  }
+}
