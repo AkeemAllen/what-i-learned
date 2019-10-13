@@ -6,10 +6,10 @@ import NavBar from "../NavBar"
 const SplashImage = () => {
   return (
     <div className="base-container">
+      {/* <NavBar /> */}
       <div className="overlay">
-        <div className="top">
-          <NavBar />
-        </div>
+        {/* <div className="top"> */}
+        {/* </div> */}
         <div className="middle">
           <div className="text">
             <h1>What I Learned</h1>

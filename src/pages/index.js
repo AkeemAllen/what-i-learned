@@ -9,7 +9,6 @@ import { rhythm } from "../utils/typography"
 
 import NavBar from "../components/NavBar/index"
 import SplashImage from "../components/SplashImage"
-import { black } from "ansi-colors"
 
 class BlogIndex extends React.Component {
   render() {
@@ -21,7 +20,7 @@ class BlogIndex extends React.Component {
       <div
         style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#FFF" }}
       >
-        {/* <NavBar /> */}
+        <NavBar />
         <SplashImage />
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="All posts" />
@@ -45,12 +44,14 @@ class BlogIndex extends React.Component {
                     <h1 style={{ fontSize: `70px` }}>Articles</h1>
                   </div> */}
                   <div>
+                    {/* <p style={{ padding: 0 }}>{node.category}</p> */}
                     <header style={{ marginTop: 0, marginBottom: `10px` }}>
                       <h1
                         style={{
                           marginBottom: rhythm(1 / 4),
                           fontSize: `38px`,
                           fontWeight: `bold`,
+                          fontFamily: "Merriweather",
                         }}
                       >
                         <Link
@@ -60,32 +61,45 @@ class BlogIndex extends React.Component {
                           {title}
                         </Link>
                       </h1>
-                      <h4
-                        style={{
-                          textTransform: `none`,
-                          fontFamily: `Montserrat`,
-                          letterSpacing: `1px`,
-                          color: `rgba(112, 119, 133,0.3)`,
-                          margin: 0,
-                          marginBottom: `5px`,
-                          fontSize: `20px`,
-                          position: `relative`,
-                          left: `76.5%`,
-                        }}
-                      >
-                        {node.category}
-                      </h4>
                       <small>{node.date}</small>
                     </header>
                     <section>
                       <p
-                        style={{ color: "#7d7d7d", lineHeight: "1.4" }}
+                        style={{
+                          color: "rgba(112, 119, 133,1)",
+                          lineHeight: "2.3",
+                          fontFamily: `Merriweather`,
+                        }}
                         dangerouslySetInnerHTML={{
                           __html: node.description.description,
                         }}
                       />
                     </section>
                   </div>
+                  Aute incididunt Lorem est sit quis ut eiusmod deserunt ullamco
+                  ut non exercitation pariatur. Mollit excepteur consequat
+                  dolore consectetur ad adipisicing dolore aliquip. Est ad et
+                  dolore dolor ipsum cupidatat. Consectetur non magna deserunt
+                  sint aliqua dolore do dolor et proident. Veniam ullamco dolore
+                  elit quis fugiat et ut. Minim dolor laboris veniam cupidatat
+                  incididunt. Nisi tempor adipisicing nisi voluptate sint
+                  voluptate dolore. Ex ipsum amet exercitation minim consectetur
+                  aliquip id occaecat tempor adipisicing ea quis qui. Sint sunt
+                  fugiat aliquip enim mollit elit aliquip commodo minim ad.
+                  Adipisicing irure occaecat labore non esse. Ad proident velit
+                  excepteur mollit. Occaecat sunt excepteur cupidatat cupidatat
+                  occaecat dolore proident do cillum aliquip enim tempor laborum
+                  aliquip. Eiusmod officia occaecat cillum laboris eu amet aute.
+                  Dolor qui consequat minim cillum proident dolor labore ut ea
+                  non. Ex ut esse qui reprehenderit esse ad occaecat fugiat esse
+                  nisi labore velit voluptate. Adipisicing tempor id proident
+                  veniam Lorem est enim labore incididunt id eu voluptate
+                  nostrud adipisicing. Anim reprehenderit irure tempor ullamco
+                  veniam laborum culpa. Consequat ad laborum aute pariatur culpa
+                  dolore proident sit nisi in adipisicing occaecat. Do amet
+                  reprehenderit pariatur enim laboris mollit pariatur officia
+                  ex. Ea ullamco eiusmod laborum labore id labore est tempor.
+                  Quis labore occaecat occaecat occaecat ex do.
                 </article>
               )
             })}
