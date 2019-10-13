@@ -64,12 +64,13 @@ class BlogIndex extends React.Component {
                         style={{
                           textTransform: `none`,
                           fontFamily: `Montserrat`,
-                          color: `rgba(112, 119, 133,0.5)`,
+                          letterSpacing: `1px`,
+                          color: `rgba(112, 119, 133,0.3)`,
                           margin: 0,
                           marginBottom: `5px`,
                           fontSize: `20px`,
                           position: `relative`,
-                          left: `73%`,
+                          left: `76.5%`,
                         }}
                       >
                         {node.category}
