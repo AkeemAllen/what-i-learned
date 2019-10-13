@@ -69,7 +69,7 @@ class BlogIndex extends React.Component {
                           marginBottom: `5px`,
                           fontSize: `20px`,
                           position: `relative`,
-                          left: `70%`,
+                          left: `73%`,
                         }}
                       >
                         {node.category}
