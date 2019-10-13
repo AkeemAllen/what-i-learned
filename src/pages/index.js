@@ -76,30 +76,6 @@ class BlogIndex extends React.Component {
                       />
                     </section>
                   </div>
-                  Aute incididunt Lorem est sit quis ut eiusmod deserunt ullamco
-                  ut non exercitation pariatur. Mollit excepteur consequat
-                  dolore consectetur ad adipisicing dolore aliquip. Est ad et
-                  dolore dolor ipsum cupidatat. Consectetur non magna deserunt
-                  sint aliqua dolore do dolor et proident. Veniam ullamco dolore
-                  elit quis fugiat et ut. Minim dolor laboris veniam cupidatat
-                  incididunt. Nisi tempor adipisicing nisi voluptate sint
-                  voluptate dolore. Ex ipsum amet exercitation minim consectetur
-                  aliquip id occaecat tempor adipisicing ea quis qui. Sint sunt
-                  fugiat aliquip enim mollit elit aliquip commodo minim ad.
-                  Adipisicing irure occaecat labore non esse. Ad proident velit
-                  excepteur mollit. Occaecat sunt excepteur cupidatat cupidatat
-                  occaecat dolore proident do cillum aliquip enim tempor laborum
-                  aliquip. Eiusmod officia occaecat cillum laboris eu amet aute.
-                  Dolor qui consequat minim cillum proident dolor labore ut ea
-                  non. Ex ut esse qui reprehenderit esse ad occaecat fugiat esse
-                  nisi labore velit voluptate. Adipisicing tempor id proident
-                  veniam Lorem est enim labore incididunt id eu voluptate
-                  nostrud adipisicing. Anim reprehenderit irure tempor ullamco
-                  veniam laborum culpa. Consequat ad laborum aute pariatur culpa
-                  dolore proident sit nisi in adipisicing occaecat. Do amet
-                  reprehenderit pariatur enim laboris mollit pariatur officia
-                  ex. Ea ullamco eiusmod laborum labore id labore est tempor.
-                  Quis labore occaecat occaecat occaecat ex do.
                 </article>
               )
             })}

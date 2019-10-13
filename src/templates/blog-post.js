@@ -26,8 +26,9 @@ class BlogPostTemplate extends React.Component {
             <header>
               <h1
                 style={{
-                  marginTop: rhythm(1),
-                  marginBottom: 0,
+                  marginTop: `200px`,
+                  marginBottom: `50px`,
+                  fontSize: `68px`,
                 }}
               >
                 {post.title}
@@ -36,13 +37,15 @@ class BlogPostTemplate extends React.Component {
                 style={{
                   ...scale(-1 / 5),
                   display: `block`,
-                  marginBottom: rhythm(1),
+                  marginBottom: `150px`,
                 }}
               >
                 {post.date}
               </p>
             </header>
-            <section style={{ lineHeight: "2.5" }}>
+            <section
+              style={{ lineHeight: "38px", fontSize: `18px`, color: `#535763` }}
+            >
               <MarkDown children={post.body.body} />
             </section>
             <hr
