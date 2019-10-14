@@ -4,6 +4,14 @@
 #
 version: 2
 jobs:
+  test:
+    docker:
+      - image: circleci/node:10.16
+    steps:
+      - run:
+          name: Running Tests
+          command: echo "Tested"
+
   build:
     # specify working directory
     working_directory: ~/project
@@ -33,14 +41,6 @@ jobs:
           root: ~/project
           paths:
             - public/*
-
-  test:
-    docker:
-      - image: circleci/node:10.16
-    steps:
-      - run:
-          name: Running Tests
-          command: echo "Tested"
 
   deploy_master:
     name: Deploy to Linode
@@ -91,8 +91,6 @@ workflows:
       - build:
           requires:
             - test
-          filters:
-            only: master
       - deploy_master:
           requires:
             - build
