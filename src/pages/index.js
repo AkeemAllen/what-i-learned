@@ -22,9 +22,9 @@ class BlogIndex extends React.Component {
       <div className="main-container">
         <NavBar />
         <SplashImage />
-        {/* <Layout location={this.props.location} title={siteTitle}>
+        <Layout location={this.props.location} title={siteTitle}>
           <SEO title="All posts" />
-          <Bio />
+          {/* <Bio /> */}
           {posts
             // .filter(({node}) =>
             //   node.category.includes(this.state.categoryName)
@@ -32,28 +32,11 @@ class BlogIndex extends React.Component {
             .map(({ node }) => {
               const title = node.title || node.slug
               return (
-                <article
-                  key={node.slug}
-                  style={{
-                    display: `flex`,
-                    flexDirection: `column`,
-                    alignItems: `center`,
-                  }}
-                >
+                <article key={node.slug} className="article">
                   <div>
-                    <header style={{ marginTop: 0, marginBottom: `10px` }}>
-                      <h1
-                        style={{
-                          marginBottom: rhythm(1 / 4),
-                          fontSize: `38px`,
-                          fontWeight: `bold`,
-                          fontFamily: "Merriweather",
-                        }}
-                      >
-                        <Link
-                          style={{ boxShadow: `none`, color: `black` }}
-                          to={node.slug}
-                        >
+                    <header>
+                      <h1>
+                        <Link className="link" to={node.slug}>
                           {title}
                         </Link>
                       </h1>
@@ -61,21 +44,18 @@ class BlogIndex extends React.Component {
                     </header>
                     <section>
                       <p
-                        style={{
-                          color: "rgba(112, 119, 133,1)",
-                          lineHeight: "2.3",
-                          fontFamily: `Merriweather`,
-                        }}
+                        className="description"
                         dangerouslySetInnerHTML={{
                           __html: node.description.description,
                         }}
                       />
                     </section>
+                    <hr />
                   </div>
                 </article>
               )
             })}
-        </Layout> */}
+        </Layout>
       </div>
     )
   }

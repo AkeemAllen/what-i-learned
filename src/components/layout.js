@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 
+import "../utils/stylesheets/layout.scss"
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -18,14 +20,7 @@ class Layout extends React.Component {
             marginTop: 0,
           }}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
+          <Link className="title-link" to={`/`}>
             {title}
           </Link>
         </h1>
@@ -34,17 +29,7 @@ class Layout extends React.Component {
       header = ""
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: `40%`,
-          padding: `${rhythm(1.5)} ${rhythm(0.05)}`,
-          paddingTop: "30px",
-          // minHeight: "100vh",
-          // fontFamily: `"Catamaran"`,
-        }}
-      >
+      <div className="layout-container">
         {/* <header>{header}</header> */}
         <main>{children}</main>
         {/* <footer>
