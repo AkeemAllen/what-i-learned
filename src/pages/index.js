@@ -19,14 +19,12 @@ class BlogIndex extends React.Component {
     const posts = data.allContentfulBlogPost.edges
 
     return (
-      <div
-        style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#FFF" }}
-      >
+      <div className="main-container">
         <NavBar />
         <SplashImage />
-        <Layout location={this.props.location} title={siteTitle}>
+        {/* <Layout location={this.props.location} title={siteTitle}>
           <SEO title="All posts" />
-          {/* <Bio /> */}
+          <Bio />
           {posts
             // .filter(({node}) =>
             //   node.category.includes(this.state.categoryName)
@@ -42,11 +40,7 @@ class BlogIndex extends React.Component {
                     alignItems: `center`,
                   }}
                 >
-                  {/* <div style={{ paddingTop: `10%`, paddingBottom: `10%` }}>
-                    <h1 style={{ fontSize: `70px` }}>Articles</h1>
-                  </div> */}
                   <div>
-                    {/* <p style={{ padding: 0 }}>{node.category}</p> */}
                     <header style={{ marginTop: 0, marginBottom: `10px` }}>
                       <h1
                         style={{
@@ -81,7 +75,7 @@ class BlogIndex extends React.Component {
                 </article>
               )
             })}
-        </Layout>
+        </Layout> */}
       </div>
     )
   }

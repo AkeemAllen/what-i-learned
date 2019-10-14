@@ -7,17 +7,9 @@ const NavBar = () => {
   return (
     <nav className="container">
       <div className="inner-navBar">
-        <div className="left-side">
-          <img src={icon} className="icon-image" alt="nav-logo" />
-          {/* <h3>WHAT I LEARNED</h3> */}
-        </div>
-        <div className="btn-container">
-          {/* <Link to="/" className="link"> */}
-          <button className="btn">
-            <p>Home</p>
-          </button>
-          {/* </Link> */}
-        </div>
+        {/* <img src={icon} className="icon-image" alt="nav-logo" /> */}
+        <h1 className="icon-image">LEARN</h1>
+        {/* <button className="btn">Home</button> */}
       </div>
     </nav>
   )
