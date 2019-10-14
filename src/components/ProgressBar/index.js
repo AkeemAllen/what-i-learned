@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 
-import "./style.scss"
+import "../../utils/stylesheets/progressBar.scss"
 
 export default class ProgressBar extends Component {
   constructor(props) {

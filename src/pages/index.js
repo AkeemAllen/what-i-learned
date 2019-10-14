@@ -10,6 +10,8 @@ import { rhythm } from "../utils/typography"
 import NavBar from "../components/NavBar/index"
 import SplashImage from "../components/SplashImage"
 
+import "../utils/stylesheets/mainStyle.scss"
+
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props

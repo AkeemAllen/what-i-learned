@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import splashImage from "../../../content/assets/index-background-books.jpg"
-import "./styles.scss"
+import "../../utils/stylesheets/splashImage.scss"
 import NavBar from "../NavBar"
 
 const SplashImage = () => {
