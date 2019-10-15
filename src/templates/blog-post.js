@@ -24,15 +24,7 @@ class BlogPostTemplate extends React.Component {
           <article>
             <header>
               <h1 className="h1-header">{post.title}</h1>
-              <p
-                style={{
-                  ...scale(-1 / 5),
-                  display: `block`,
-                  marginBottom: `150px`,
-                }}
-              >
-                {post.date}
-              </p>
+              <p className="post-date">{post.date}</p>
             </header>
             <section className="markdown">
               <MarkDown children={post.body.body} />
@@ -45,7 +37,7 @@ class BlogPostTemplate extends React.Component {
             <footer>
               <Bio />
             </footer>
-            <CommentSection />
+            {/* <CommentSection /> */}
           </article>
 
           <nav>
