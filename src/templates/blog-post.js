@@ -7,7 +7,6 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
 import NavBar from "../components/NavBar";
-import MarkDown from "markdown-to-jsx";
 import CommentSection from "../components/CommentsSection";
 import "../utils/stylesheets/blogPost.scss";
 

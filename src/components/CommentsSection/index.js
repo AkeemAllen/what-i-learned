@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.scss";
+import "../../utils/stylesheets/commentStyle.scss";
 import Bio from "./commenterBio";
 import Comment from "./comment";
 // import axios from "axios"

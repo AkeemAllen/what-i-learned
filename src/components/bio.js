@@ -32,7 +32,7 @@ const Bio = () => {
     }
   `);
 
-  const { author } = data.site.siteMetadata;
+  const { author, social } = data.site.siteMetadata;
   return (
     <div
       style={{
