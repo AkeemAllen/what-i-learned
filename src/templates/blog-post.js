@@ -26,8 +26,13 @@ class BlogPostTemplate extends React.Component {
               <h1 className="h1-header">{post.title}</h1>
               <p className="post-date">{post.date}</p>
             </header>
-            <section className="markdown">
-              <MarkDown children={post.body.body} />
+            <section
+              className="markdown"
+              dangerouslySetInnerHTML={{
+                __html: post.body.childMarkdownRemark.html,
+              }}
+            >
+              {/* <MarkDown children={post.body.childMarkdownRemark.htmlAst} /> */}
             </section>
             <hr
               style={{
@@ -95,7 +100,11 @@ export const pageQuery = graphql`
         description
       }
       body {
-        body
+        childMarkdownRemark {
+          rawMarkdownBody
+          htmlAst
+          html
+        }
       }
     }
   }
