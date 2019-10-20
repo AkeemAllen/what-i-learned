@@ -47,11 +47,15 @@ class CommentSection extends React.Component {
     };
 
     await axios
-      .post("http://localhost:8081/graphql", JSON.stringify(requestBody), {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      .post(
+        "http://www.whatilearnedarchives.com:8081/graphql",
+        JSON.stringify(requestBody),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then(response => {
         console.log(response);
       })
@@ -77,11 +81,15 @@ class CommentSection extends React.Component {
     };
 
     await axios
-      .post("http://localhost:8081/graphql", JSON.stringify(requestBody), {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      .post(
+        "http://www.whatilearnedarchives.com:8081/graphql",
+        JSON.stringify(requestBody),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then(response => {
         console.log(response);
         const comments = response.data.data.getCommentByPost;
