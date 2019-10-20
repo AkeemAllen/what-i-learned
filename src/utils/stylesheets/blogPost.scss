@@ -1,0 +1,36 @@
+.blogpost-base-container {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: "#FFF";
+
+  .post-date {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  .h1-header {
+    @media screen and (min-width: 768px) {
+      font-size: 60px;
+    }
+    @media screen and (min-width: 1000px) {
+      font-size: 68px;
+    }
+    margin-top: 200px;
+    margin-bottom: 50px;
+    font-size: 50px;
+  }
+
+  .markdown {
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+    @media screen and (min-width: 1000px) {
+      font-size: 18px;
+    }
+    line-height: 38px;
+    font-size: 16px;
+    color: #535763;
+    font-family: "Muli", "Georgia", sans-serif;
+  }
+}

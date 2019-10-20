@@ -2,12 +2,14 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import MarkDown from "markdown-to-jsx";
 
-import { rhythm, scale } from "../utils/typography";
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import CommentSection from "../components/CommentsSection";
+import { rhythm, scale } from "../utils/typography";
 import NavBar from "../components/NavBar";
+import MarkDown from "markdown-to-jsx";
+import CommentSection from "../components/CommentsSection";
+import "../utils/stylesheets/blogPost.scss";
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -16,33 +18,16 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext;
 
     return (
-      <div
-        style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#FFF" }}
-      >
+      <div className="blogpost-base-container">
         <NavBar />
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title={post.title} description={post.description.description} />
           <article>
             <header>
-              <h1
-                style={{
-                  marginTop: rhythm(1),
-                  marginBottom: 0,
-                }}
-              >
-                {post.title}
-              </h1>
-              <p
-                style={{
-                  ...scale(-1 / 5),
-                  display: `block`,
-                  marginBottom: rhythm(1),
-                }}
-              >
-                {post.date}
-              </p>
+              <h1 className="h1-header">{post.title}</h1>
+              <p className="post-date">{post.date}</p>
             </header>
-            <section>
+            <section className="markdown">
               <MarkDown children={post.body.body} />
             </section>
             <hr

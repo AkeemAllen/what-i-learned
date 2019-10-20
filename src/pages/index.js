@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
+import Image from "gatsby-image";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
@@ -7,6 +8,9 @@ import SEO from "../components/seo";
 import { rhythm } from "../utils/typography";
 
 import NavBar from "../components/NavBar/index";
+import SplashImage from "../components/SplashImage";
+
+import "../utils/stylesheets/mainStyle.scss";
 
 class BlogIndex extends React.Component {
   render() {
@@ -15,39 +19,42 @@ class BlogIndex extends React.Component {
     const posts = data.allContentfulBlogPost.edges;
 
     return (
-      <div
-        style={{ padding: 0, margin: 0, border: 0, backgroundColor: "#FFF" }}
-      >
+      <div className="main-container">
         <NavBar />
+        <SplashImage />
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="All posts" />
-          <Bio />
-          {posts.map(({ node }) => {
-            const title = node.title || node.slug;
-            return (
-              <article key={node.slug}>
-                <header>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                  >
-                    <Link style={{ boxShadow: `none` }} to={node.slug}>
-                      {title}
-                    </Link>
-                  </h3>
-                  <small>{node.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.description.description,
-                    }}
-                  />
-                </section>
-              </article>
-            );
-          })}
+          {/* <Bio /> */}
+          {posts
+            // .filter(({node}) =>
+            //   node.category.includes(this.state.categoryName)
+            // )
+            .map(({ node }) => {
+              const title = node.title || node.slug;
+              return (
+                <article key={node.slug} className="article">
+                  <div>
+                    <header>
+                      <h1>
+                        <Link className="link" to={node.slug}>
+                          {title}
+                        </Link>
+                      </h1>
+                      <small>{node.date}</small>
+                    </header>
+                    <section>
+                      <p
+                        className="description"
+                        dangerouslySetInnerHTML={{
+                          __html: node.description.description,
+                        }}
+                      />
+                    </section>
+                    <hr />
+                  </div>
+                </article>
+              );
+            })}
         </Layout>
       </div>
     );
@@ -73,6 +80,15 @@ export const pageQuery = graphql`
           slug
           date(formatString: "MMMM DD, YYYY")
           category
+          indexPhoto {
+            description
+            fixed {
+              src
+            }
+            file {
+              url
+            }
+          }
         }
       }
     }

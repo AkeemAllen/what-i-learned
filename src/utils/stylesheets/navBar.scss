@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  font-family: "Merriweather", "Georgia", serif;
+  padding: 25px 0;
+  width: 100%;
+  background: rgba(244, 250, 255, 1);
+  background: transparent;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  z-index: 1;
+
+  .inner-navBar {
+    position: relative;
+    padding: 0 15px;
+    width: 100%;
+    justify-content: space-between;
+    font-family: inherit;
+
+    .icon-image {
+      position: relative;
+      font-size: 20px;
+      // top: 50%;
+      left: 0px;
+      // height: 24px;
+      margin: 0;
+      border: 0;
+      padding: 0;
+    }
+
+    .btn {
+      position: relative;
+      left: 50px;
+      // font-size: 18px;
+      color: black;
+      font-family: inherit;
+      background-color: inherit;
+      border: solid 1px black;
+      border-radius: 4px;
+      transition-duration: 0.25s;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -53,8 +53,19 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author}</strong>
+      <p
+        style={{
+          // display: `flex`,
+          maxWidth: "70%",
+          // paddingRight: rhythm(3),
+        }}
+      >
+        Written by <strong>{author}</strong>. An avid bookreader and software
+        developer from Jamaica.
+        {` `}
+        <a href={`https://twitter.com/${social.twitter}`}>
+          Follow me on twitter
+        </a>
       </p>
     </div>
   );

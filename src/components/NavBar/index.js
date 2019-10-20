@@ -1,28 +1,15 @@
-import React from "react";
-import "./style.scss";
+import React, { Component } from "react";
+import "../../utils/stylesheets/navBar.scss";
 import { Link } from "gatsby";
+import icon from "../../../content/assets/placeholder.com-logo3.png";
 
-const NavBar = props => {
+const NavBar = () => {
   return (
     <nav className="container">
-      <div className="innerNavBar">
-        <div>
-          <Link to="/">
-            <h3>WHAT I LEARNED</h3>
-          </Link>
-        </div>
-        <div className="btn-container">
-          <Link to="/" className="link">
-            <button className="btn">
-              <p>Login</p>
-            </button>
-          </Link>
-          <Link to="/signUp" className="link">
-            <button className="btn">
-              <p>Sign Up</p>
-            </button>
-          </Link>
-        </div>
+      <div className="inner-navBar">
+        {/* <img src={icon} className="icon-image" alt="nav-logo" /> */}
+        <h1 className="icon-image">LEARN</h1>
+        {/* <button className="btn">Home</button> */}
       </div>
     </nav>
   );

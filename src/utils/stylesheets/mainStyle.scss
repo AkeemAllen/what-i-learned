@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.main-container {
+  background-color: white;
+
+  .article {
+    display: flex;
+    justify-content: center;
+    padding: 0 10px 0 10px;
+    margin: 0;
+    header {
+      margin-bottom: 20px;
+      h1 {
+        @media screen and (min-width: 768px) {
+          font-size: 30px;
+        }
+        @media screen and (min-width: 1000px) {
+          font-size: 36px;
+        }
+        margin-bottom: 20px;
+        font-family: "Merriweather", "Georgia", sans-serif;
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 38px;
+        .link {
+          box-shadow: none;
+          color: black;
+        }
+      }
+      small {
+        font-family: "Muli", "Arial", sans-serif;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .description {
+    @media screen and (min-width: 768px) {
+      font-size: 18px;
+    }
+    @media screen and (min-width: 1024px) {
+      font-size: 20px;
+    }
+    font-family: "Muli", "Georgia", sans-serif;
+    color: rgba(112, 119, 133, 1);
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
