@@ -37,7 +37,7 @@ class BlogPostTemplate extends React.Component {
             <footer>
               <Bio />
             </footer>
-            <CommentSection />
+            <CommentSection slug={post.slug} />
           </article>
 
           <nav>
@@ -90,6 +90,7 @@ export const pageQuery = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       id
       title
+      slug
       date(formatString: "MMMM DD, YYYY")
       description {
         description
