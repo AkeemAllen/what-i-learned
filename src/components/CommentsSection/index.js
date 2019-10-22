@@ -128,7 +128,7 @@ class CommentSection extends React.Component {
             name="commentor"
             onChange={this.handleChange}
           />
-          <textarea
+          <input
             placeholder="Comment Here"
             name="newComment"
             onChange={this.handleChange}
