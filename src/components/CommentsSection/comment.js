@@ -4,14 +4,16 @@ const Comment = props => {
   return (
     <div
       style={{
-        border: "solid 0.5px #f2f4f7",
-        borderRadius: "10px",
-        marginBottom: "50px",
+        border: "solid 1px #6e7175",
+        borderRadius: "5px",
+        marginBottom: "30px",
         fontFamily: `"Roboto", sans-serif`,
         padding: 0,
       }}
     >
-      <p style={{ padding: "30px", fontSize: "100%" }}>{props.comment}</p>
+      <p style={{ padding: "10px 20px 5px 20px", fontSize: "100%" }}>
+        {props.comment}
+      </p>
     </div>
   );
 };

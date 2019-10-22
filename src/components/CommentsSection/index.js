@@ -8,23 +8,30 @@ class CommentSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: [
-        {
-          index: 1,
-          comment: "First",
-          writer: {
-            name: "Akeem Allen",
-          },
-          date: "September 11, 2019",
-        },
-      ],
+      comments: [],
       newComment: "",
+      commentWasAdded: false,
+      commentor: "Anonymous",
     };
   }
 
   componentDidMount() {
     this.getComments();
   }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.state.commentWasAdded !== prevState.commentWasAdded) {
+      this.getComments();
+      this.setState({
+        commentWasAdded: false,
+      });
+    }
+  }
+
+  getDate = () => {
+    const currentDate = new Date().getTime();
+    return currentDate;
+  };
 
   handleChange = e => {
     const { name, value } = e.target;
@@ -37,7 +44,11 @@ class CommentSection extends React.Component {
     const requestBody = {
       query: `
         mutation addComment {
-          addComment(input:{body:"${this.state.newComment}",postSlug:"${this.props.slug}"}){
+          addComment(input:{body:"${this.state.newComment}",postSlug:"${
+        this.props.slug
+      }",writer:"${
+        this.state.commentor == "" ? "Anonymous" : this.state.commentor
+      }"}){
             id
             body
             postSlug
@@ -58,6 +69,9 @@ class CommentSection extends React.Component {
       )
       .then(response => {
         console.log(response);
+        this.setState({
+          commentWasAdded: true,
+        });
       })
       .catch(err => {
         console.log(err);
@@ -72,9 +86,8 @@ class CommentSection extends React.Component {
           id
           postSlug
           body
-          writer {
-            name
-          }
+          writer
+          date
         }
       }
         `,
@@ -104,12 +117,17 @@ class CommentSection extends React.Component {
   };
 
   render() {
-    const { comments } = this.state;
+    const { comments, disabled, newComment } = this.state;
 
     return (
       <div className="comment-base-container">
         <h3>Comments</h3>
         <div className="add-comment">
+          <input
+            placeholder="Name: Default Anonymous"
+            name="commentor"
+            onChange={this.handleChange}
+          />
           <textarea
             placeholder="Comment Here"
             name="newComment"
@@ -117,6 +135,7 @@ class CommentSection extends React.Component {
           />
           <button
             className="add-comment-btn"
+            disabled={newComment == "" ? true : false}
             onClick={() => this.postComment()}
           >
             Comment
@@ -124,11 +143,11 @@ class CommentSection extends React.Component {
         </div>
         <div className="comment-container">
           {comments.map((comment, index) => (
-            <div key={index}>
+            <div className="comment" key={index}>
               <Bio
                 key={index}
                 index={index}
-                author={comment.writer.name}
+                author={comment.writer}
                 date={comment.date}
               />
               <Comment comment={comment.body} />

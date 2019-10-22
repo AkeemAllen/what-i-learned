@@ -3,6 +3,12 @@
   flex-direction: column;
   padding-top: 10px;
   .add-comment {
+    input {
+      width: 100%;
+      border: none;
+      border-bottom: solid 1px lightgray;
+      margin-bottom: 50px;
+    }
     textarea {
       width: 100%;
       border: none;
@@ -22,9 +28,9 @@
   }
   .comment-container {
     .comment {
-      border: solid 0.5px #f2f4f7;
+      border: none;
       border-radius: 5px;
-      padding: 30px;
+      padding: 20px;
     }
   }
 }
