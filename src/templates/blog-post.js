@@ -37,7 +37,7 @@ class BlogPostTemplate extends React.Component {
             <footer>
               <Bio />
             </footer>
-            <CommentSection slug={post.slug} />
+            {/* <CommentSection slug={post.slug} /> */}
           </article>
 
           <nav>
