@@ -15,7 +15,6 @@ yes | sudo apt-get install expect
 # Successfuly logs me into server
 if [ $server = "akeem@74.207.224.133" ]; then
     .circleci/scripts/cpyToServer.sh ${password}
-    echo ${password}
   elif [ $server = "admin@50.116.27.177" ]; then
     .circleci/scripts/cpyToDevelopServer.sh
 fi
