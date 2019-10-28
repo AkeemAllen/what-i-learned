@@ -14,6 +14,7 @@ if (env == "develop") {
 }
 
 exec(`ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts`, (err, stdout, stderr) => {
+  console.log(Here);
   if (err) {
     console.log(err);
     console.log(stderr);
