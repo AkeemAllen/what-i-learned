@@ -81,7 +81,7 @@ jobs:
             chmod 755 .circleci/scripts/cpyToServer.sh
       - run:
           name: Copy files to Server
-          command: node .circleci/scripts/deploy.sh master
+          command: .circleci/scripts/deploy.sh master
 
 workflows:
   version: 2
