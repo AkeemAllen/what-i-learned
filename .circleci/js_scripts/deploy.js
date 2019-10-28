@@ -27,9 +27,9 @@ exec(`yes | sudo apt-get install expect`, (err, stdout, stderr) => {
     console.log(stdout);
   }
 });
+
 exec(
-  `ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts` +
-    `&& printf ${process.env.password} | scp -r /project ssh akeem@74.207.224.133:~/`,
+  `ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts` + `&& node ./cpyToServer.js`,
   (err, stdout, stderr) => {
     if (err) {
       console.log(err);
