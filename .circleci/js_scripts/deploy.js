@@ -29,7 +29,8 @@ exec(`yes | sudo apt-get install expect`, (err, stdout, stderr) => {
 });
 
 exec(
-  `ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts` + `&& node ./cpyToServer.js`,
+  `ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts` +
+    ` && node .circleci/js_scripts/cpyToServer.js`,
   (err, stdout, stderr) => {
     if (err) {
       console.log(err);
