@@ -1,5 +1,7 @@
 #!/usr/bin/expect -f
-spawn scp -r public/ ssh admin@50.116.27.177:~/
-expect "admin@50.116.27.177's password"
-send "akstar4321\r"
+set pass  [lindex $argv 0];
+
+spawn scp -r ../what_i_learned ssh akeem@74.207.224.133:~/
+expect "akeem@74.207.224.133's password"
+send "${pass}\r"
 interact

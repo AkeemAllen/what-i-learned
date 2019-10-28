@@ -1,10 +1,9 @@
 if [ $1 = "develop" ]; then
-    ip=50.116.27.177
-    server=admin@50.116.27.177
+    cpyPublic=false
   elif [ $1 = "master" ]; then
-    ip=74.207.224.133
-    server=akeem@74.207.224.133
+    cpyPublic=true
 fi
+ip=74.207.224.133
 
 if [ -z `ssh-keygen -F $ip` ]; then
   ssh-keyscan -H $ip >> ~/.ssh/known_hosts
@@ -13,8 +12,8 @@ fi
 yes | sudo apt-get install expect
 
 # Successfuly logs me into server
-if [ $server = "akeem@74.207.224.133" ]; then
+if [ $cpyPublic = true ]; then
     .circleci/scripts/cpyToServer.sh ${password}
-  elif [ $server = "admin@50.116.27.177" ]; then
-    .circleci/scripts/cpyToDevelopServer.sh
+  elif [ $server = false ]; then
+    .circleci/scripts/cpyToDevelopServer.sh ${password}
 fi
