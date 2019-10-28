@@ -78,7 +78,7 @@ jobs:
           name: Change Privileges
           command: |
             chmod 755 .circleci/scripts/deploy.sh
-            chmod 755 .circleci/scripts/cpyToServer.sh
+            chmod 755 .circleci/scripts/cpyToDevelopServer.sh
       - run:
           name: Copy files to Server
           command: .circleci/scripts/deploy.sh develop
