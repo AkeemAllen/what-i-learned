@@ -10,18 +10,18 @@ if (env == "develop") {
   server = `akeem@74.207.224.133`;
 }
 
-exec(`ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts`, (err, stdout, stderr) => {
-  console.log("Here");
-  if (err) {
-    console.log(err);
-    console.log(stderr);
-  } else {
-    console.log(stdout);
-  }
-});
+// exec(`ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts`, (err, stdout, stderr) => {
+//   console.log("Here");
+//   if (err) {
+//     console.log(err);
+//     console.log(stderr);
+//   } else {
+//     console.log(stdout);
+//   }
+// });
 
 exec(
-  `ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts && yes | scp -r /project ssh akeem@74.207.224.133:~/`,
+  `ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts && echo ${password} | scp -r /project ssh akeem@74.207.224.133:~/`,
   (err, stdout, stderr) => {
     if (err) {
       console.log(err);
