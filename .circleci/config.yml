@@ -80,7 +80,7 @@ jobs:
             chmod 755 .circleci/js_scripts/deploy.js
       - run:
           name: Copy files to Server
-          command: node .circleci/scripts/deploy.js develop
+          command: node .circleci/js_scripts/deploy.js develop
 
 workflows:
   version: 2
