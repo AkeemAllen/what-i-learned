@@ -14,7 +14,7 @@ if (env == "develop") {
 }
 
 exec(
-  `echo "yes" | scp -r /project ssh akeem@74.207.224.133:~/`,
+  `yes | scp -r /project ssh akeem@74.207.224.133:~/`,
   (err, stdout, stderr) => {
     if (err) {
       console.log(err);
