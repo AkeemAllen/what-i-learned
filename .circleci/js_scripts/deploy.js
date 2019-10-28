@@ -21,7 +21,7 @@ if (env == "develop") {
 // });
 
 exec(
-  `ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts && echo ${password} | scp -r /project ssh akeem@74.207.224.133:~/`,
+  `ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts && echo ${process.env.password} | scp -r /project ssh akeem@74.207.224.133:~/`,
   (err, stdout, stderr) => {
     if (err) {
       console.log(err);
