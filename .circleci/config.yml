@@ -77,9 +77,7 @@ jobs:
       - run:
           name: Change Privileges
           command: |
-            chmod 755 .circleci/scripts/deploy.js
-            chmod 755 .circleci/scripts/cpyToServer.sh
-            chmod 755 .circleci/scripts/cpyToDevelopServer.sh
+            chmod 755 .circleci/js_scripts/deploy.js
       - run:
           name: Copy files to Server
           command: node .circleci/scripts/deploy.js develop
