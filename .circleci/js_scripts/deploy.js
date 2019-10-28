@@ -10,24 +10,6 @@ if (env == "develop") {
   server = `akeem@74.207.224.133`;
 }
 
-// exec(`ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts`, (err, stdout, stderr) => {
-//   console.log("Here");
-//   if (err) {
-//     console.log(err);
-//     console.log(stderr);
-//   } else {
-//     console.log(stdout);
-//   }
-// });
-exec(`yes | sudo apt-get install expect`, (err, stdout, stderr) => {
-  if (err) {
-    console.log(err);
-    console.log(stderr);
-  } else {
-    console.log(stdout);
-  }
-});
-
 exec(
   `yes | sudo apt-get install expect` +
     ` && ssh-keyscan -H ${ip} >> ~/.ssh/known_hosts` +
