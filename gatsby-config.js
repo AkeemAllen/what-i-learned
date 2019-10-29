@@ -47,7 +47,61 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allContentfulBlogPosts } }) => {
+              return allContentfulBlogPosts.edges.map(edge => {
+                return Object.assign({}, edge.node, {
+                  description: edge.node.description.description,
+                  date: edge.node.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [
+                    {
+                      "content:encoded":
+                        edge.node.body.childMarkdownRemark.html,
+                    },
+                  ],
+                });
+              });
+            },
+            query: `{
+              edges {
+                node {
+                  fields{
+                    slug
+                  }
+                  description{description}
+                  date(formatString: "MMMM DD, YYYY")
+                  body {
+                    childMarkdownRemark{
+                      html
+                    }
+                  }
+                }
+              }
+            }`,
+            output: "/rss.xml",
+            title: "Your Site's RSS Feed",
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
