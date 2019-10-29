@@ -64,8 +64,8 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allContentfulBlogPosts } }) => {
-              return allContentfulBlogPosts.edges.map(edge => {
+            serialize: ({ query: { site, allContentfulBlogPost } }) => {
+              return allContentfulBlogPost.edges.map(edge => {
                 return Object.assign({}, edge.node, {
                   description: edge.node.description.description,
                   date: edge.node.date,
@@ -81,16 +81,23 @@ module.exports = {
               });
             },
             query: `{
-              edges {
-                node {
-                  fields{
-                    slug
-                  }
-                  description{description}
-                  date(formatString: "MMMM DD, YYYY")
-                  body {
-                    childMarkdownRemark{
-                      html
+              allContentfulBlogPost(
+                sort: {
+                  fields: date,
+                  order: DESC
+                }
+              ) {
+                edges {
+                  node {
+                    fields{
+                      slug
+                    }
+                    description{description}
+                    date(formatString: "MMMM DD, YYYY")
+                    body {
+                      childMarkdownRemark{
+                        html
+                      }
                     }
                   }
                 }
