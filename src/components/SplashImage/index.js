@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "../../utils/stylesheets/splashImage.scss";
-import { Twitter, Mail, Facebook, Instagram } from "@material-ui/icons";
+import { Twitter, Mail, Facebook, Instagram, Menu } from "@material-ui/icons";
 import logo from "../../../content/assets/placeholder.com-logo3.png";
+import { Link } from "gatsby";
 
 const SplashImage = () => {
   return (
@@ -13,30 +14,28 @@ const SplashImage = () => {
             <div className="site-mast-left">
               <img className="logo" src={logo} />
             </div>
+            <Menu className="toggle-icon" />
             <div className="site-mast-right">
-              <a>
+              <Link>
                 <Twitter className="icon" />
-              </a>
-              <a>
+              </Link>
+              <Link>
                 <Mail className="icon" />
-              </a>
-              <a>
+              </Link>
+              <Link>
                 <Facebook className="icon" />
-              </a>
-              <a>
+              </Link>
+              <Link>
                 <Instagram className="icon" />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="site-banner">
             <h1>What I Learned</h1>
             <h3>Claim the written knowledge</h3>
           </div>
-          <div className="site-nav">
-            {/* <h1>What I Learned</h1>
-            <h3>Claim the written knowledge</h3> */}
-            text
-          </div>
+          {/* <div className="site-nav">
+          </div> */}
         </div>
       </div>
     </div>

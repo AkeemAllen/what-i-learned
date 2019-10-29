@@ -22,32 +22,71 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding: 0 70px;
-      margin: 0 100px;
+      padding: 0px;
+      @media screen and (min-width: 768px) {
+        padding: 0 70px;
+        margin: 0 100px;
+      }
+      @media screen and (min-width: 1000px) {
+        padding: 0 70px;
+        margin: 0 100px;
+      }
 
       .site-mast {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
+        // width: 100%;
         height: auto;
-        .site-mast-right {
+        margin: 0 10px;
+        .toggle-icon {
           display: flex;
-          justify-content: space-between;
           a {
-            color: white;
+            color: rgba(51, 55, 69, 0.8);
+          }
+          color: white;
+        }
+        .site-mast-right {
+          display: none;
+          justify-content: space-between;
+          @media screen and (min-width: 768px) {
+            display: flex;
+            padding: 0 70px;
+            margin: 0 100px;
+          }
+          @media screen and (min-width: 1000px) {
+            display: flex;
+            padding: 0 70px;
+            margin: 0 100px;
+          }
+          a {
+            color: rgba(51, 55, 69, 0.8);
             text-decoration: none;
             .icon {
               width: 50px;
-              // filter: invert(100%);
+              color: white;
+              @media screen and (min-width: 768px) {
+                width: 50px;
+              }
+              @media screen and (min-width: 1000px) {
+                width: 50px;
+              }
             }
           }
         }
         .site-mast-left {
+          display: flex;
+          align-items: center;
           .logo {
-            width: 150px;
+            width: 110px;
             margin: 0;
             filter: invert(100%);
+            @media screen and (min-width: 768px) {
+              width: 50px;
+            }
+            @media screen and (min-width: 1000px) {
+              width: 50px;
+            }
           }
         }
       }
@@ -56,66 +95,51 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 0 100px;
+        margin: 0 30px;
         padding: 144px 0;
         height: 100%;
+        @media screen and (min-width: 768px) {
+          margin: 0 100px;
+        }
+        @media screen and (min-width: 1000px) {
+          margin: 0 100px;
+        }
         h1,
         h3 {
+          font-family: "Montserrat", serif;
           margin: 0;
+          text-rendering: optimizeLegibility;
+          letter-spacing: 1px;
+          font-weight: bold;
+          text-shadow: 0 0 5px rgba(51, 55, 69, 0.8);
+        }
+        h1 {
+          display: block;
+          margin-bottom: 10px;
           color: white;
+          font-size: 30px;
+          line-height: 1.2;
+          @media screen and (min-width: 768px) {
+            font-size: 50px;
+          }
+          @media screen and (min-width: 1000px) {
+            font-size: 50px;
+          }
+        }
+        h3 {
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 16px;
+          @media screen and (min-width: 768px) {
+            font-size: 20px;
+          }
+          @media screen and (min-width: 1000px) {
+            font-size: 20px;
+          }
         }
       }
       .site-nav {
         display: flex;
         width: 100%;
-      }
-    }
-    .middle {
-      display: flex;
-      opacity: 1;
-      padding: 0px 0;
-      margin: 0px auto;
-      justify-content: center;
-
-      .text {
-        display: inherit;
-        flex-direction: column;
-        color: rgba(244, 250, 255, 1);
-        padding: 10px 16px;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        h1 {
-          @media screen and (min-width: 768px) {
-            font-size: 50px;
-          }
-          @media screen and (min-width: 1000px) {
-            font-size: 50px;
-          }
-          display: block;
-          font-weight: bold;
-          margin: 0 0 10px 0;
-          font-size: 30px;
-          text-shadow: 0 0 5px black;
-          letter-spacing: 1px;
-          line-height: 1.2;
-          text-rendering: optimizeLegibility;
-        }
-        h3 {
-          @media screen and (min-width: 768px) {
-            font-size: 20px;
-          }
-          @media screen and (min-width: 1000px) {
-            font-size: 20px;
-          }
-          letter-spacing: 1px;
-          text-rendering: optimizeLegibility;
-          margin: 0;
-          font-weight: bold;
-          font-size: 16px;
-          text-shadow: 0 0 5px black;
-        }
       }
     }
   }
