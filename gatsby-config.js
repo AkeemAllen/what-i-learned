@@ -10,6 +10,8 @@ module.exports = {
   },
   plugins: [
     {
+      //Pull content information from the
+      //contentful web service
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
@@ -17,6 +19,7 @@ module.exports = {
       },
     },
     {
+      //Acquires assets from the root folder
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
@@ -48,6 +51,8 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      //Creates an rss feed that can
+      //notify users of new content
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -116,6 +121,9 @@ module.exports = {
       },
     },
     {
+      //Makes it so that the site can be
+      //added as a PWA to a mobile homescreen
+      //or desktop
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `What I Learned Archives`,
@@ -127,10 +135,14 @@ module.exports = {
         icon: `content/assets/book-solid.svg`,
       },
     },
+    //Adds drop-in support for making a Gatsby site work
+    //offline and more resistant to bad network connections
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    //Provides drop-in support for SASS/SCSS stylesheets
     `gatsby-plugin-sass`,
     {
+      //plugin for utilizing the Typography library with minimal configuration.
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
