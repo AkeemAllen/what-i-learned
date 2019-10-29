@@ -20,7 +20,7 @@ class BlogIndex extends React.Component {
 
     return (
       <div className="main-container">
-        <NavBar />
+        {/* <NavBar /> */}
         <SplashImage />
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title="All posts" />
