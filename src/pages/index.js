@@ -7,10 +7,19 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm } from "../utils/typography";
 
-import NavBar from "../components/NavBar/index";
 import SplashImage from "../components/SplashImage";
-
 import "../utils/stylesheets/mainStyle.scss";
+import media from "../../content/assets/book-bindings-close-up-composition-669988.jpg";
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  Typography,
+  CardMedia,
+  Avatar,
+  IconButton,
+  MoreVertIcon,
+} from "@material-ui/core";
 
 class BlogIndex extends React.Component {
   render() {
@@ -22,40 +31,54 @@ class BlogIndex extends React.Component {
       <div className="main-container">
         {/* <NavBar /> */}
         <SplashImage />
-        <Layout location={this.props.location} title={siteTitle}>
+        {/* <Layout
+          className="grid-format"
+          location={this.props.location}
+          title={siteTitle}
+        > */}
+        <div className="grid-format">
           <SEO title="All posts" />
           {/* <Bio /> */}
-          {posts
-            // .filter(({node}) =>
-            //   node.category.includes(this.state.categoryName)
-            // )
-            .map(({ node }) => {
-              const title = node.title || node.slug;
-              return (
-                <article key={node.slug} className="article">
-                  <div>
-                    <header>
-                      <h1>
-                        <Link className="link" to={node.slug}>
-                          {title}
-                        </Link>
-                      </h1>
-                      <small>{node.date}</small>
-                    </header>
-                    <section>
-                      <p
-                        className="description"
-                        dangerouslySetInnerHTML={{
-                          __html: node.description.description,
-                        }}
-                      />
-                    </section>
-                    <hr />
-                  </div>
-                </article>
-              );
-            })}
-        </Layout>
+          {posts.map(({ node }) => {
+            return (
+              <article className="article">
+                <Card className="card">
+                  <CardMedia
+                    className="media"
+                    image={media}
+                    title="indexPhoto"
+                  />
+                  <img src={node.indexPhoto.fixed.src} />
+                  <Link to={node.slug} style={{ color: "black" }}>
+                    <CardHeader
+                      component="div"
+                      title={node.title}
+                      subheader={node.date}
+                      classes={{
+                        title: "card-header-title",
+                        subheader: "card-header-subheader",
+                      }}
+                    />
+                  </Link>
+                  <CardContent
+                    classes={{
+                      root: "card-content",
+                    }}
+                  >
+                    {/* <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    > */}
+                    {node.description.childMarkdownRemark.excerpt}
+                    {/* </Typography> */}
+                  </CardContent>
+                </Card>
+              </article>
+            );
+          })}
+        </div>
+        {/* </Layout> */}
       </div>
     );
   }
@@ -75,7 +98,9 @@ export const pageQuery = graphql`
         node {
           title
           description {
-            description
+            childMarkdownRemark {
+              excerpt
+            }
           }
           slug
           date(formatString: "MMMM DD, YYYY")

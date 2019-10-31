@@ -45,6 +45,12 @@
             color: rgba(51, 55, 69, 0.8);
           }
           color: white;
+          @media screen and (min-width: 768px) {
+            display: none;
+          }
+          @media screen and (min-width: 1000px) {
+            display: none;
+          }
         }
         .site-mast-right {
           display: none;
@@ -52,12 +58,12 @@
           @media screen and (min-width: 768px) {
             display: flex;
             padding: 0 70px;
-            margin: 0 100px;
+            margin: 0px;
           }
           @media screen and (min-width: 1000px) {
             display: flex;
             padding: 0 70px;
-            margin: 0 100px;
+            margin: 0px;
           }
           a {
             color: rgba(51, 55, 69, 0.8);
@@ -82,10 +88,10 @@
             margin: 0;
             filter: invert(100%);
             @media screen and (min-width: 768px) {
-              width: 50px;
+              width: 150px;
             }
             @media screen and (min-width: 1000px) {
-              width: 50px;
+              width: 150px;
             }
           }
         }
