@@ -42,12 +42,11 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }) => {
             return (
               <article className="article">
-                <Card className="card">
-                  <CardMedia
-                    className="media"
-                    image={media}
-                    title="indexPhoto"
-                  />
+                <Card
+                  classes={{
+                    root: "card",
+                  }}
+                >
                   <img src={node.indexPhoto.fixed.src} />
                   <Link to={node.slug} style={{ color: "black" }}>
                     <CardHeader
@@ -65,13 +64,7 @@ class BlogIndex extends React.Component {
                       root: "card-content",
                     }}
                   >
-                    {/* <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    > */}
                     {node.description.childMarkdownRemark.excerpt}
-                    {/* </Typography> */}
                   </CardContent>
                 </Card>
               </article>
