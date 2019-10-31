@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../../utils/stylesheets/splashImage.scss";
+import "../utils/stylesheets/splashImage.scss";
 import { Twitter, Mail, Facebook, Instagram, Menu } from "@material-ui/icons";
-import logo from "../../../content/assets/placeholder.com-logo3.png";
+import logo from "../../content/assets/placeholder.com-logo3.png";
 import { Link } from "gatsby";
 
 const SplashImage = () => {
