@@ -4,42 +4,48 @@ import { Twitter, Mail, Facebook, Instagram, Menu } from "@material-ui/icons";
 import logo from "../../content/assets/placeholder.com-logo3.png";
 import { Link } from "gatsby";
 
-const SplashImage = () => {
-  return (
-    <div className="base-container">
-      <div className="overlay">
-        {/* <div className="top">Test</div> */}
-        <div className="middle-container">
-          <div className="site-mast">
-            <div className="site-mast-left">
-              <img className="logo" src={logo} />
+class SplashImage extends Component {
+  handClick = () => {
+    console.log("Hello");
+  };
+  render() {
+    return (
+      <div className="base-container">
+        <div className="overlay">
+          {/* <div className="top">Test</div> */}
+          <div className="middle-container">
+            <div className="site-mast">
+              <div className="site-mast-left">
+                {/* <img className="logo" src={logo} /> */}
+                <h1>LEARN</h1>
+              </div>
+              {/* <Menu
+                onMouseOver={() => this.handClick}
+                className="toggle-icon"
+              /> */}
+              <div className="site-mast-right">
+                <a href="https://twitter.com/Akstar39306982">
+                  <Twitter className="icon" />
+                </a>
+                <a href="mailto:allenakeem8@gmail.com">
+                  <Mail className="icon" />
+                </a>
+                <a href="https://www.instagram.com/Alberto_Stares/">
+                  <Instagram className="icon" />
+                </a>
+              </div>
             </div>
-            <Menu className="toggle-icon" />
-            <div className="site-mast-right">
-              <Link>
-                <Twitter className="icon" />
-              </Link>
-              <Link>
-                <Mail className="icon" />
-              </Link>
-              <Link>
-                <Facebook className="icon" />
-              </Link>
-              <Link>
-                <Instagram className="icon" />
-              </Link>
+            <div className="site-banner">
+              <h1>What I Learned</h1>
+              <h3>Claim the written knowledge</h3>
             </div>
+            {/* <div className="site-nav">
+            </div> */}
           </div>
-          <div className="site-banner">
-            <h1>What I Learned</h1>
-            <h3>Claim the written knowledge</h3>
-          </div>
-          {/* <div className="site-nav">
-          </div> */}
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default SplashImage;

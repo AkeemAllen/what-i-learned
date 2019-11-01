@@ -20,6 +20,7 @@ import {
   IconButton,
   MoreVertIcon,
 } from "@material-ui/core";
+import Footer from "../components/Footer";
 
 class BlogIndex extends React.Component {
   render() {
@@ -72,6 +73,7 @@ class BlogIndex extends React.Component {
           })}
         </div>
         {/* </Layout> */}
+        <Footer />
       </div>
     );
   }

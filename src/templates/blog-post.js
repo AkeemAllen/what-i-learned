@@ -9,6 +9,7 @@ import { rhythm, scale } from "../utils/typography";
 import NavBar from "../components/NavBar";
 import CommentSection from "../components/CommentsSection";
 import "../utils/stylesheets/blogPost.scss";
+import { node } from "prop-types";
 
 class BlogPostTemplate extends React.Component {
   render() {
