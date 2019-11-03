@@ -30,7 +30,7 @@ class SplashImage extends Component {
                 <a href="mailto:allenakeem8@gmail.com">
                   <Mail className="icon" />
                 </a>
-                <a href="https://www.instagram.com/Alberto_Stares/">
+                <a href="https://www.instagram.com/beyond4321/">
                   <Instagram className="icon" />
                 </a>
               </div>
