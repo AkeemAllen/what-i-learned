@@ -2,7 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `What I Learned`,
     author: `Akeem Allen`,
-    description: `A knowledge archive container all that I have learned`,
+    description: `Books are an excellent source of knowledge that everyone 
+                  should find the time to explore in their own ways. Througout 
+                  these post I seek to entice your appetite for knowledge as 
+                  I read through popular books and extrapulate their views on reveting topics`,
     siteUrl: `https://www.whatilearnedarchives.com/`,
     social: {
       twitter: `Akstar39306982`,
