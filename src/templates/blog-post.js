@@ -9,13 +9,15 @@ import { rhythm, scale } from "../utils/typography";
 import NavBar from "../components/NavBar";
 import CommentSection from "../components/CommentsSection";
 import "../utils/stylesheets/blogPost.scss";
-import { node } from "prop-types";
+import Share from "../components/ShareBar";
+import { Twitter } from "@material-ui/icons";
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.contentfulBlogPost;
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
+    const message = `Check out this blog at https://www.whatilearnedarchives.com/${post.slug}`;
 
     return (
       <div className="blogpost-base-container">
@@ -25,7 +27,14 @@ class BlogPostTemplate extends React.Component {
           <article>
             <header>
               <h1 className="h1-header">{post.title}</h1>
-              <p className="post-date">{post.date}</p>
+              <p className="post-date">
+                {post.date}{" "}
+                <div className="social-share">
+                  <a href={`https://twitter.com/intent/tweet?text=${message}`}>
+                    Share on Twitter
+                  </a>
+                </div>
+              </p>
             </header>
             <section className="markdown">
               <MarkDown children={post.body.body} />

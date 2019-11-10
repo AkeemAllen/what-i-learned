@@ -5,16 +5,28 @@
   background-color: "#FFF";
 
   .post-date {
-    display: block;
-    margin-bottom: 50px;
+    display: flex;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    justify-content: space-between;
+    .social-share {
+      display: block;
+      font-size: medium;
+      a {
+        text-decoration: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   .h1-header {
     @media screen and (min-width: 768px) {
-      font-size: 60px;
+      font-size: 55px;
     }
     @media screen and (min-width: 1000px) {
-      font-size: 68px;
+      font-size: 60px;
     }
     margin-top: 200px;
     margin-bottom: 50px;
