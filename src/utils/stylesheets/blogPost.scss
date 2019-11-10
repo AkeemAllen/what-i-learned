@@ -9,16 +9,6 @@
     margin-bottom: 20px;
     margin-right: 50px;
     justify-content: space-between;
-    .social-share {
-      display: block;
-      font-size: medium;
-      a {
-        text-decoration: none;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
   }
 
   .h1-header {
@@ -44,5 +34,9 @@
     font-size: 16px;
     color: #535763;
     font-family: "Muli", "Georgia", sans-serif;
+  }
+
+  .footer {
+    margin-top: 30px;
   }
 }

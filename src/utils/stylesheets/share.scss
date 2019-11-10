@@ -1,4 +1,22 @@
-.share-container {
-  display: flex;
-  max-width: 10px;
+.social-share {
+  max-width: 70px;
+  a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    // width: 100px;
+    color: white;
+    .social-icon,
+    p {
+      color: #3366bb;
+      margin: 0;
+    }
+    p {
+      font-size: 14px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
