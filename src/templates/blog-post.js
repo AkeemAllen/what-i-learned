@@ -11,13 +11,78 @@ import CommentSection from "../components/CommentsSection";
 import "../utils/stylesheets/blogPost.scss";
 import Share from "../components/ShareBar";
 import { Twitter, Facebook } from "@material-ui/icons";
+import JSsoup from "jssoup";
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.contentfulBlogPost;
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
+    const markdown = post.body.childMarkdownRemark.html;
 
+    const testMarkdown = post.body.childMarkdownRemark.htmlAst;
+
+    let html = [];
+
+    testMarkdown.children.forEach(element => {
+      if (element.tagName != undefined) {
+        if (element.children[0].tagName === "img") {
+          html.push(
+            React.createElement(element.children[0].tagName, {
+              src: element.children[0].properties.src,
+            })
+          );
+        } else if (element.tagName == "ol" || element.tagName == "ul") {
+          // let list = React.createElement(element.tagName, {}, element.children);
+          console.log(element);
+          let li = [];
+          element.children.forEach(list => {
+            if (list.tagName === "li") {
+              li.push(
+                React.createElement(list.tagName, {}, list.children[0].value)
+              );
+            }
+          });
+          html.push(React.createElement(element.tagName, {}, li));
+        } else {
+          html.push(
+            React.createElement(
+              element.tagName,
+              { id: "reg-paragraph" },
+              element.children[0].value
+            )
+          );
+        }
+      }
+      // console.log(element["tagName"]);
+    });
+    // console.log(html);
+
+    // pTag.forEach(element => {
+    //   if (element.nextElement.name == "img") {
+    //     element.attrs.id = "image-paragraph";
+    //     let img = React.createElement(element.nextElement.name, {
+    //       src: element.nextElement.attrs.src,
+    //     });
+    //     html.push(
+    //       React.createElement(element.name, { id: element.attrs.id }, img)
+    //     );
+    //   } else {
+    //     element.attrs.id = "reg-paragraph";
+    //     html.push(
+    //       React.createElement(
+    //         element.name,
+    //         { id: element.attrs.id },
+    //         element.text
+    //       )
+    //     );
+    //   }
+    // });
+    // console.log(pTag);
+    // console.log(h2Tag);
+    // console.log(h3Tag);
+    // console.log(html);
+    // console.log(testMarkdown);
     return (
       <div className="blogpost-base-container">
         <NavBar />
@@ -26,13 +91,13 @@ class BlogPostTemplate extends React.Component {
           <article>
             <header>
               <h1 className="h1-header">{post.title}</h1>
-              <p className="post-date">
-                {post.date} <Share slug={post.slug} />
-              </p>
+              <div className="small-header">
+                <p className="post-date">
+                  {post.date} <Share slug={post.slug} />
+                </p>
+              </div>
             </header>
-            <section className="markdown">
-              <MarkDown children={post.body.body} />
-            </section>
+            <section className="markdown">{html}</section>
             <hr
               style={{
                 marginBottom: rhythm(1),
@@ -102,6 +167,10 @@ export const pageQuery = graphql`
       }
       body {
         body
+        childMarkdownRemark {
+          htmlAst
+          html
+        }
       }
     }
   }
