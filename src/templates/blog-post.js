@@ -11,7 +11,6 @@ import CommentSection from "../components/CommentsSection";
 import "../utils/stylesheets/blogPost.scss";
 import Share from "../components/ShareBar";
 import { Twitter, Facebook } from "@material-ui/icons";
-import JSsoup from "jssoup";
 
 class BlogPostTemplate extends React.Component {
   render() {
