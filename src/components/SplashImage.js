@@ -12,17 +12,11 @@ class SplashImage extends Component {
     return (
       <div className="base-container">
         <div className="overlay">
-          {/* <div className="top">Test</div> */}
           <div className="middle-container">
             <div className="site-mast">
               <div className="site-mast-left">
-                {/* <img className="logo" src={logo} /> */}
                 <h1>LEARN</h1>
               </div>
-              {/* <Menu
-                onMouseOver={() => this.handClick}
-                className="toggle-icon"
-              /> */}
               <div className="site-mast-right">
                 <a href="https://twitter.com/Akstar39306982">
                   <Twitter className="icon" />
@@ -39,8 +33,6 @@ class SplashImage extends Component {
               <h1>What I Learned</h1>
               <h3>Claim the written knowledge</h3>
             </div>
-            {/* <div className="site-nav">
-            </div> */}
           </div>
         </div>
       </div>

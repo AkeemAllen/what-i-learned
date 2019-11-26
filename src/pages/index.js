@@ -30,16 +30,9 @@ class BlogIndex extends React.Component {
 
     return (
       <div className="main-container">
-        {/* <NavBar /> */}
         <SplashImage />
-        {/* <Layout
-          className="grid-format"
-          location={this.props.location}
-          title={siteTitle}
-        > */}
         <div className="grid-format">
           <SEO title="All posts" />
-          {/* <Bio /> */}
           {posts.map(({ node }) => {
             return (
               <article className="article">
@@ -72,8 +65,6 @@ class BlogIndex extends React.Component {
             );
           })}
         </div>
-        {/* </Layout> */}
-        {/* <Footer /> */}
       </div>
     );
   }
