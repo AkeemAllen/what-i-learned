@@ -23,6 +23,7 @@ fi
 yes | sudo apt-get install expect
 
 # Successfuly logs me into server
-if [ $cpyPublic == true ]; then
+if [ $cpyPublic == true ]; 
+then
     .circleci/scripts/cpyToServer.sh ${password}
 fi
