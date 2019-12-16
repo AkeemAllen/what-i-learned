@@ -1,9 +1,22 @@
-if [ $1 = "develop" ]; then
-    cpyPublic=false
-  elif [ $1 = "master" ]; then
-    cpyPublic=true
+echo $1;
+
+if [$1 = "develop"]
+then 
+  cpyPublic=false
 fi
+
+if [$1 = "master"]
+then
+  cpyPublic=true
+fi
+
+# if [ $1 = "develop" ]; then
+#     cpyPublic=false
+#   elif [ $1 = "master" ]; then
+#     cpyPublic=true
+# fi
 ip=74.207.224.133
+
 
 if [ -z `ssh-keygen -F $ip` ]; then
   ssh-keyscan -H $ip >> ~/.ssh/known_hosts
