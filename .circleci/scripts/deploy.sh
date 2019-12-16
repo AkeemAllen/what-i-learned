@@ -27,6 +27,6 @@ if [ $cpyPublic == true ]; then
     .circleci/scripts/cpyToServer.sh ${password}
 fi
 
-if [ $cpyPublic == false ]; then
-    .circleci/scripts/cpyToDevelopServer.sh ${password}
-fi
+# if [ $cpyPublic == false ]; then
+#     .circleci/scripts/cpyToDevelopServer.sh ${password}
+# fi
