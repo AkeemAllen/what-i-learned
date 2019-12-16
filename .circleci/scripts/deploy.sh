@@ -1,11 +1,9 @@
-echo $1;
-
-if [ $1 = "develop" ]
+if [ $1 == "develop" ]
 then 
   cpyPublic=false
 fi
 
-if [ $1 = "master" ]
+if [ $1 == "master" ]
 then
   cpyPublic=true
 fi
@@ -27,6 +25,8 @@ yes | sudo apt-get install expect
 # Successfuly logs me into server
 if [ $cpyPublic == true ]; then
     .circleci/scripts/cpyToServer.sh ${password}
-  elif [ $cpyPublic == false ]; then
+fi
+
+if [ $cpyPublic == false ]; then
     .circleci/scripts/cpyToDevelopServer.sh ${password}
 fi
