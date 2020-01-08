@@ -36,13 +36,16 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }) => {
             return (
               <article className="article">
-                <Card
-                  classes={{
-                    root: "card",
-                  }}
-                >
-                  <img src={node.indexPhoto.fixed.src} />
-                  <Link to={node.slug} style={{ color: "black" }}>
+                <Link to={node.slug} className="link">
+                  <Card
+                    classes={{
+                      root: "card",
+                    }}
+                  >
+                    <img
+                      src={node.indexPhoto.fixed.src}
+                      className="card-image"
+                    />
                     <CardHeader
                       component="div"
                       title={node.title}
@@ -52,15 +55,15 @@ class BlogIndex extends React.Component {
                         subheader: "card-header-subheader",
                       }}
                     />
-                  </Link>
-                  <CardContent
-                    classes={{
-                      root: "card-content",
-                    }}
-                  >
-                    {node.description.childMarkdownRemark.excerpt}
-                  </CardContent>
-                </Card>
+                    <CardContent
+                      classes={{
+                        root: "card-content",
+                      }}
+                    >
+                      {node.description.childMarkdownRemark.excerpt}
+                    </CardContent>
+                  </Card>
+                </Link>
               </article>
             );
           })}
