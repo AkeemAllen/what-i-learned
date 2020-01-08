@@ -34,53 +34,60 @@
       @media screen and (min-width: 1000px) {
         // align-items: center;
       }
-      .link {
-        display: flex;
+      // .link {
+      //   display: flex;
+      //   max-width: 300px;
+      //   max-height: 500px;
+      //   color: black;
+      //   &:hover {
+      //     color: white;
+      //   }
+      .card {
+        display: block;
         max-width: 300px;
         max-height: 500px;
-        color: black;
+        box-shadow: 0px 0px 10px rgba(51, 55, 69, 0.2);
+        border-radius: 4px;
+        transition-property: background-color, color, box-shadow, transform;
+        transition-duration: 0.6s;
         &:hover {
-          color: white;
+          background: linear-gradient(
+            60deg,
+            rgb(230, 52, 98),
+            rgb(254, 95, 85)
+          );
+          box-shadow: 0px 0px 20px rgba(51, 55, 69, 0.5);
+          // color: white;
+          cursor: pointer;
+          transform: scale(1.04);
           .card-image {
             transform: scale(1.1);
           }
-        }
-        .card {
-          display: block;
-          max-width: 300px;
-          max-height: 500px;
-          box-shadow: 0px 0px 10px rgba(51, 55, 69, 0.2);
-          transition-property: background-color, color, box-shadow;
-          transition-duration: 0.3s;
-          &:hover {
-            background: linear-gradient(
-              60deg,
-              rgb(230, 52, 98),
-              rgb(254, 95, 85)
-            );
-            box-shadow: 0px 0px 20px rgba(51, 55, 69, 0.5);
-            color: white;
-            cursor: pointer;
-          }
-          .card-image {
-            transition: 0.75s;
-          }
-          .card-header-title {
-            font-size: 20px;
-            font-family: "Montserrat", serif;
-            font-weight: bold;
-          }
-          .card-header-subheader {
-            font-size: 10px;
-            font-family: "Montserrat", serif;
-            font-weight: normal;
-          }
+          .card-header-title,
+          .card-header-subheader,
           .card-content {
-            font-size: 13px;
-            font-family: "Muli", "Montserrat", serif;
+            color: white;
           }
+        }
+        .card-image {
+          transition-duration: 0.6s;
+        }
+        .card-header-title {
+          font-size: 20px;
+          font-family: "Montserrat", serif;
+          font-weight: bold;
+        }
+        .card-header-subheader {
+          font-size: 10px;
+          font-family: "Montserrat", serif;
+          font-weight: normal;
+        }
+        .card-content {
+          font-size: 13px;
+          font-family: "Montserrat", serif;
         }
       }
     }
   }
 }
+// }

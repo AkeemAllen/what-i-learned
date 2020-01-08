@@ -36,7 +36,10 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }) => {
             return (
               <article className="article">
-                <Link to={node.slug} className="link">
+                <Link
+                  to={node.slug}
+                  style={{ display: "flex", color: "white" }}
+                >
                   <Card
                     classes={{
                       root: "card",
