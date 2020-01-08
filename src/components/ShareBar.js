@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Twitter } from "@material-ui/icons";
 import "../utils/stylesheets/share.scss";
 

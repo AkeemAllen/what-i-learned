@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "../utils/stylesheets/navBar.scss";
 import { Link } from "gatsby";
 

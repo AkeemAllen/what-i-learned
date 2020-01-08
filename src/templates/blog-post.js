@@ -5,12 +5,11 @@ import MarkDown from "markdown-to-jsx";
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { rhythm, scale } from "../utils/typography";
+import { rhythm } from "../utils/typography";
 import NavBar from "../components/NavBar";
-import CommentSection from "../components/CommentsSection";
 import "../utils/stylesheets/blogPost.scss";
 import Share from "../components/ShareBar";
-import { Twitter, Facebook } from "@material-ui/icons";
+// import { Twitter, Facebook } from "@material-ui/icons";
 
 class BlogPostTemplate extends React.Component {
   render() {

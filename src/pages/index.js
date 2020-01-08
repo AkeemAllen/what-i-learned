@@ -1,31 +1,13 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import Image from "gatsby-image";
-
-import Bio from "../components/bio";
-import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { rhythm } from "../utils/typography";
-
 import SplashImage from "../components/SplashImage";
 import "../utils/stylesheets/mainStyle.scss";
-import media from "../../content/assets/book-bindings-close-up-composition-669988.jpg";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  Typography,
-  CardMedia,
-  Avatar,
-  IconButton,
-  MoreVertIcon,
-} from "@material-ui/core";
-import Footer from "../components/Footer";
+import { Card, CardHeader, CardContent } from "@material-ui/core";
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
     const posts = data.allContentfulBlogPost.edges;
 
     return (
@@ -48,6 +30,7 @@ class BlogIndex extends React.Component {
                     <img
                       src={node.indexPhoto.fixed.src}
                       className="card-image"
+                      alt="Inspiration"
                     />
                     <CardHeader
                       component="div"
