@@ -74,12 +74,31 @@
               color: white;
               margin-right: 5px;
               padding: 0;
+              transition: 0.3s;
               @media screen and (min-width: 768px) {
                 width: 25px;
                 margin-right: 5px;
               }
               @media screen and (min-width: 1000px) {
                 width: 50px;
+              }
+              &:hover {
+                transform: scale(1.2);
+              }
+            }
+            .twitter {
+              &:hover {
+                color: rgb(0, 172, 237);
+              }
+            }
+            .insta {
+              &:hover {
+                color: rgb(221, 42, 123);
+              }
+            }
+            .mail {
+              &:hover {
+                color: #c6c6c6;
               }
             }
           }

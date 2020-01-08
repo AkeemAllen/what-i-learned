@@ -19,13 +19,13 @@ class SplashImage extends Component {
               </div>
               <div className="site-mast-right">
                 <a href="https://twitter.com/Akstar39306982">
-                  <Twitter className="icon" />
+                  <Twitter className="icon twitter" />
                 </a>
                 <a href="mailto:allenakeem8@gmail.com">
-                  <Mail className="icon" />
+                  <Mail className="icon mail" />
                 </a>
                 <a href="https://www.instagram.com/beyond4321/">
-                  <Instagram className="icon" />
+                  <Instagram className="icon insta" />
                 </a>
               </div>
             </div>
