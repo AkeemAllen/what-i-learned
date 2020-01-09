@@ -1,4 +1,4 @@
-name: Node CI
+name: Building What I Learned Achives
 
 on:
   push:
@@ -33,6 +33,7 @@ jobs:
         with:
           name: public
           path: public/
+
   deploy:
     name: Download public file and Deploy
     needs: build
