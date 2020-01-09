@@ -6,7 +6,10 @@ const Share = props => {
   const message = `Check out this blog at https://www.whatilearnedarchives.com/${props.slug}`;
   return (
     <div className="social-share">
-      <a href={`https://twitter.com/intent/tweet?text=${message}`}>
+      <a
+        href={`https://twitter.com/intent/tweet?text=${message}`}
+        target="_blank"
+      >
         <p>
           <Twitter className="social-icon" />
         </p>

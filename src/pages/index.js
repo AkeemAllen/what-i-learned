@@ -4,6 +4,7 @@ import SEO from "../components/seo";
 import SplashImage from "../components/SplashImage";
 import "../utils/stylesheets/mainStyle.scss";
 import { Card, CardHeader, CardContent } from "@material-ui/core";
+import { Twitter, Mail, Instagram } from "@material-ui/icons";
 
 class BlogIndex extends React.Component {
   render() {
@@ -53,6 +54,20 @@ class BlogIndex extends React.Component {
               </article>
             );
           })}
+        </div>
+        <div className="footer-container">
+          <div className="top">
+            <a href="https://twitter.com/Akstar39306982">
+              <Twitter className="icon" />
+            </a>
+            <a href="mailto:allenakeem8@gmail.com">
+              <Mail className="icon" />
+            </a>
+            <a href="https://www.instagram.com/beyond4321/">
+              <Instagram className="icon" />
+            </a>
+          </div>
+          <div className="bottom">&#169; 2020 Akeem Allen</div>
         </div>
       </div>
     );
