@@ -26,6 +26,10 @@ jobs:
           CONTENTFUL_SPACE_ID: rhbqbl5xs4xd
           CONTENTFUL_ACCESS_TOKEN: nuWTsHHDypgzrFPiIPKaDEnRR9CB-hXEbTC__Rdqaqw
           ANALYTICS_TRACKING_ID: UA-149886863-1
+      - uses: actions/upload-artifact@v1
+        with:
+          name: public
+          path: public
   deploy:
     name: Download public file and Deploy
     needs: build
