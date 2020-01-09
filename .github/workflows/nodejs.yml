@@ -33,4 +33,5 @@ jobs:
     steps:
       - uses: actions/download-artifact@v1
         with:
-          name: public/
+          name: public
+          path: public/
