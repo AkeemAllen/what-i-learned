@@ -20,6 +20,7 @@ jobs:
         run: |
           yarn install
           yarn build
+          ls -a
         env:
           CI: true
           CONTENTFUL_SPACE_ID: rhbqbl5xs4xd
