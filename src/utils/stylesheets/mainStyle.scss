@@ -6,6 +6,32 @@
 
 .main-container {
   background-color: white;
+  .category-switcher-container {
+    display: flex;
+    justify-content: center;
+    .category-switcher {
+      display: flex;
+      justify-content: space-between;
+      // height: 50px;
+      width: inherit;
+      // background-color: lightgrey;
+      // border-radius: 20px;
+      margin-top: 50px;
+      .category-button {
+        height: 30px;
+        width: 100px;
+        margin-right: 10px;
+        border-radius: 20px;
+        // background: rgba(51, 55, 69, 0.8);
+        background: lightgray;
+        font-size: 15px;
+        color: rgba(51, 55, 69, 1);
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
   .grid-format {
     display: grid;
     width: 90%;

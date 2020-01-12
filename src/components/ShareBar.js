@@ -9,6 +9,7 @@ const Share = props => {
       <a
         href={`https://twitter.com/intent/tweet?text=${message}`}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <p>
           <Twitter className="social-icon" />
