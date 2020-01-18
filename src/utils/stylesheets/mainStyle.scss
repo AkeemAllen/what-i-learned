@@ -7,12 +7,20 @@
 .main-container {
   background-color: white;
   .category-switcher-container {
-    display: flex;
+    display: grid;
     justify-content: center;
+    align-items: center;
+    .category-header {
+      display: grid;
+      font-family: "Monsterrat";
+      font-weight: bolder;
+      font-size: 30px;
+      margin-bottom: 0px;
+    }
     .category-switcher {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      margin-top: 50px;
+      // margin-top: 50px;
       @media screen and (min-width: 1000px) {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         width: inherit;
@@ -23,9 +31,10 @@
         margin-right: 10px;
         margin-top: 10px;
         border-radius: 20px;
-        // background: rgba(51, 55, 69, 0.8);
         background: lightgray;
-        font-size: 15px;
+        font-size: 16px;
+        // font-weight: bold;
+        font-family: "Monsterrat";
         color: rgba(51, 55, 69, 1);
         &:hover {
           cursor: pointer;

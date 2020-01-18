@@ -17,7 +17,7 @@ class SplashImage extends Component {
               <div className="site-mast-left">
                 <h1>LEARN</h1>
               </div>
-              <div className="site-mast-right">
+              {/* <div className="site-mast-right">
                 <a href="https://twitter.com/Akstar39306982">
                   <Twitter className="icon" />
                 </a>
@@ -27,7 +27,7 @@ class SplashImage extends Component {
                 <a href="https://www.instagram.com/beyond4321/">
                   <Instagram className="icon" />
                 </a>
-              </div>
+              </div> */}
             </div>
             <div className="site-banner">
               <h1>What I Learned</h1>

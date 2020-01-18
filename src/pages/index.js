@@ -21,6 +21,7 @@ class BlogIndex extends React.Component {
       <div className="main-container">
         <SplashImage />
         <div className="category-switcher-container">
+          <p className="category-header">Categories</p>
           <div className="category-switcher">
             <button
               className="category-button"
