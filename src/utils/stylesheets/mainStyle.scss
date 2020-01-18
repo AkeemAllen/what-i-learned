@@ -10,17 +10,18 @@
     display: flex;
     justify-content: center;
     .category-switcher {
-      display: flex;
-      justify-content: space-between;
-      // height: 50px;
-      width: inherit;
-      // background-color: lightgrey;
-      // border-radius: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       margin-top: 50px;
+      @media screen and (min-width: 1000px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: inherit;
+      }
       .category-button {
         height: 30px;
         width: 100px;
         margin-right: 10px;
+        margin-top: 10px;
         border-radius: 20px;
         // background: rgba(51, 55, 69, 0.8);
         background: lightgray;
