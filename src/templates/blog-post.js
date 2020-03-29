@@ -9,6 +9,7 @@ import { rhythm } from "../utils/typography";
 import NavBar from "../components/NavBar";
 import "../utils/stylesheets/blogPost.scss";
 import Share from "../components/ShareBar";
+import background from "../../content/assets/background.jpg";
 // import { Twitter, Facebook } from "@material-ui/icons";
 
 class BlogPostTemplate extends React.Component {
@@ -23,20 +24,35 @@ class BlogPostTemplate extends React.Component {
       /<p id="reg-paragraph"><img/gm,
       `<p id="image-paragraph"><img`
     );
+
+    const styles = {
+      banner: {
+        display: "flex",
+        height: "50vh",
+        marginBottom: "5%",
+        backgroundImage: "url(`../../content/assets/background.jpg`)",
+        // backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      },
+    };
+
     return (
       <div className="blogpost-base-container">
         <NavBar />
+        <div className="blogpost-header">
+          <h1>Testing</h1>
+        </div>
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title={post.title} description={post.description.description} />
           <article>
-            <header>
+            {/* <header>
               <h1 className="h1-header">{post.title}</h1>
               <div className="small-header">
                 <p className="post-date">
                   {post.date} <Share slug={post.slug} />
                 </p>
               </div>
-            </header>
+            </header> */}
             <section className="markdown">
               <MarkDown children={html} />
             </section>
@@ -105,6 +121,11 @@ export const pageQuery = graphql`
       date(formatString: "MMMM DD, YYYY")
       description {
         description
+      }
+      indexPhoto {
+        fixed {
+          src
+        }
       }
       body {
         body

@@ -4,6 +4,17 @@
   border: 0;
   background-color: "#FFF";
 
+  .blogpost-header {
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    background: url("../../../content/assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 5%;
+  }
+
   header {
     display: flex;
     flex-direction: column;
