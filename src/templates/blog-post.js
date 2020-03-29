@@ -40,7 +40,12 @@ class BlogPostTemplate extends React.Component {
       <div className="blogpost-base-container">
         <NavBar />
         <div className="blogpost-header">
-          <h1>Testing</h1>
+          <h1 className="blogpost-header-title">{post.title}</h1>
+          {/* <div className="small-header">
+            <p className="post-date">
+              {post.date} <Share slug={post.slug} />
+            </p>
+          </div> */}
         </div>
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title={post.title} description={post.description.description} />
