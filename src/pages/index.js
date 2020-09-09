@@ -29,7 +29,6 @@ class BlogIndex extends React.Component {
               All
             </button>
             {this.state.categories.map(category => {
-              console.log(this.state.category);
               return (
                 <button
                   className="category-button"
@@ -39,14 +38,11 @@ class BlogIndex extends React.Component {
                 </button>
               );
             })}
-            {/* <button>Lifestyle</button>
-            <button>Stocks Journey</button> */}
           </div>
         </div>
         <div className="grid-format">
           <SEO title="All posts" />
           {posts.map(({ node }) => {
-            console.log(node.category);
             if (
               node.category.includes(this.state.category) ||
               this.state.category === ""

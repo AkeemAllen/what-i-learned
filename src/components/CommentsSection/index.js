@@ -68,7 +68,6 @@ class CommentSection extends React.Component {
         }
       )
       .then(response => {
-        console.log(response);
         this.setState({
           commentWasAdded: true,
         });

@@ -5,9 +5,6 @@ import { Twitter, Mail, Instagram } from "@material-ui/icons";
 // import { Link } from "gatsby";
 
 class SplashImage extends Component {
-  handClick = () => {
-    console.log("Hello");
-  };
   render() {
     return (
       <div className="base-container">
